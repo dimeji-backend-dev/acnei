@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Africa Computational Neuroscience Education Initiative (ACNEI)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="logo-text">ACN<span>EI</span></div>
+                </a>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="nav-container" id="navContainer">
+                    <ul class="nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#impact">Impact</a></li>
+                        <li><a href="#grants">Grants</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#stories">Success</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                    </ul>
+                    <button class="cta-button nav-cta" id="openContactModal">Contact Us</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="contact-modal">
+            <div class="modal-header">
+                <h3>Contact Us</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="organization">Organization</label>
+                            <input type="text" id="organization" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" class="form-control" rows="5" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interest">Primary Interest</label>
+                        <select id="interest" class="form-control">
+                            <option value="">Select an option</option>
+                            <option value="grant">Grant Funding/Partnership</option>
+                            <option value="research">Research Collaboration</option>
+                            <option value="training">Training Program</option>
+                            <option value="volunteer">Volunteer Opportunity</option>
+                            <option value="other">Other Inquiry</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                    <div class="send-hint"><i class="fas fa-info-circle"></i> Opens Gmail compose window in a new tab (or your mail client)</div>
+                    
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Your message has been sent successfully! We'll get back to you soon.</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 id="typing-text"></h1>
+                <p>Advancing brain research, AI innovation, and computational neuroscience across Africa through cutting-edge research, training, and collaborative networks.</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="cta-button hero-cta">Explore Our Vision</a>
+                    <a href="#programs" class="cta-button hero-cta secondary">View Programs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Mission & Vision</h2>
+                <p>Driving the future of computational neuroscience in Africa through innovation, collaboration, and capacity building</p>
+            </div>
+            
+            <div class="mv-container">
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To build a pan-African computational neuroscience community that leverages artificial intelligence and advanced computing to understand brain function, address neurological disorders, and develop innovative solutions for Africa's unique challenges.</p>
+                </div>
+                
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To establish Africa as a global leader in computational neuroscience research and innovation, creating a sustainable ecosystem that nurtures local talent, fosters interdisciplinary collaboration, and translates research into real-world impact.</p>
+                </div>
+                
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Our Values</h3>
+                    <p>Excellence, Collaboration, Innovation, Inclusivity, and Ethical Research. We believe in open science, equitable access to resources, and building bridges between disciplines and continents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs -->
+    <section class="programs-section" id="programs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Programs</h2>
+                <p>Comprehensive initiatives designed to build capacity and advance computational neuroscience across Africa</p>
+            </div>
+            
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-img" style="background-image: url('./images/neuroscience-academy.jpg');"></div>
+                    <div class="program-content">
+                        <h3>African Computational Neuroscience Academy</h3>
+                        <p>Intensive training programs, workshops, and fellowships for early-career researchers across Africa. Our curriculum covers neural data analysis, machine learning applications in neuroscience, and computational modeling.</p>
+                        <a href="#contact" class="cta-button program-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-img" style="background-image: url('./images/neuroscience-network-1.jpg');"></div>
+                    <div class="program-content">
+                        <h3>Pan-African Research Network</h3>
+                        <p>Connecting researchers, institutions, and resources across the continent to facilitate collaborative projects, data sharing, and joint publications in computational neuroscience.</p>
+                        <a href="#contact" class="cta-button program-btn">Join Network</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-img" style="background-image: url('./images/neuroscience-research.jpg');"></div>
+                    <div class="program-content">
+                        <h3>Open Source Neuroscience Tools</h3>
+                        <p>Developing and distributing open-source software, datasets, and computational tools tailored for African neuroscience research needs and resource constraints.</p>
+                        <a href="#contact" class="cta-button program-btn">Access Tools</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Leadership Team</h2>
+                <p>Meet the experts driving computational neuroscience forward in Africa</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-img" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1376&q=80');"></div>
+                    <div class="team-info">
+                        <h4>Dr. Amina Diallo</h4>
+                        <p class="team-role">Executive Director</p>
+                        <p>Former Head of Neuroscience, University of Lagos. PhD in Computational Neuroscience from Cambridge.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-img" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80');"></div>
+                    <div class="team-info">
+                        <h4>Prof. Kwame Mensah</h4>
+                        <p class="team-role">Research Director</p>
+                        <p>Professor of Neural Engineering at University of Ghana. 20+ years in brain-computer interfaces.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-img" style="background-image: url('https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80');"></div>
+                    <div class="team-info">
+                        <h4>Dr. Nia Johnson</h4>
+                        <p class="team-role">Partnerships Director</p>
+                        <p>Former Global Health Initiative lead at WHO. Specializes in international research collaborations.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>In Action</h2>
+                <p>Our work across Africa - training, research, and community building</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Workshop">
+                    <div class="gallery-overlay">
+                        <h4>Nairobi Workshop 2023</h4>
+                        <p>Training 50 researchers from East Africa</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Lab">
+                    <div class="gallery-overlay">
+                        <h4>Advanced Research Lab</h4>
+                        <p>New facility in Accra, Ghana</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Conference">
+                    <div class="gallery-overlay">
+                        <h4>Annual Conference</h4>
+                        <p>Pan-African Computational Neuroscience Summit</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Research">
+                    <div class="gallery-overlay">
+                        <h4>Field Research</h4>
+                        <p>Collecting neural data in rural communities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact -->
+    <section class="impact-section" id="impact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Impact</h2>
+                <p>Measurable outcomes demonstrating our contribution to computational neuroscience in Africa</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" data-count="250">0</div>
+                    <p class="stat-label">Researchers Trained</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number" data-count="18">0</div>
+                    <p class="stat-label">African Countries</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number" data-count="45">0</div>
+                    <p class="stat-label">Research Publications</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number" data-count="12">0</div>
+                    <p class="stat-label">Collaborative Projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grants -->
+    <section class="grants-section" id="grants">
+        <div class="container">
+            <div class="section-title">
+                <h2>Grant Funding & Partnerships</h2>
+                <p>Strategic investments in Africa's computational neuroscience future</p>
+            </div>
+            
+            <div class="grants-content">
+                <h3>Why Invest in African Computational Neuroscience?</h3>
+                <p>Your support enables groundbreaking research with global implications while building sustainable scientific capacity across Africa.</p>
+                
+                <ul class="grants-list">
+                    <li><i class="fas fa-check"></i> <strong>Unique Research Opportunities:</strong> Africa's genetic diversity offers unparalleled insights</li>
+                    <li><i class="fas fa-check"></i> <strong>High Impact:</strong> 15:1 return on investment through publications and innovations</li>
+                    <li><i class="fas fa-check"></i> <strong>Sustainable Model:</strong> Capacity building and local leadership for long-term impact</li>
+                    <li><i class="fas fa-check"></i> <strong>Interdisciplinary Approach:</strong> Bridging neuroscience, AI, and data science</li>
+                    <li><i class="fas fa-check"></i> <strong>Proven Track Record:</strong> Successfully implemented across 12 African countries</li>
+                </ul>
+                
+                <button class="cta-button grants-btn" id="openContactModal2">Discuss Funding Opportunities</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="stories-section" id="stories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Success Stories</h2>
+                <p>See what our funding partners have to say about our impactful collaborations</p>
+            </div>
+            
+            <div class="stories-carousel">
+                <div class="story-card active">
+                    <div class="story-logo">Google</div>
+                    <div class="story-quote">
+                        "ACNEI's computational neuroscience initiative represents exactly the type of transformative research we aim to support. Their work bridging AI and brain science has produced groundbreaking insights."
+                    </div>
+                    <div class="story-author">Dr. Sarah Chen</div>
+                    <div class="story-role">Head of AI for Social Good, Google Research</div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-logo">Wellcome</div>
+                    <div class="story-quote">
+                        "Our partnership with ACNEI has exceeded all expectations. They've demonstrated remarkable efficiency in translating funding into tangible research outputs."
+                    </div>
+                    <div class="story-author">Michael Omondi</div>
+                    <div class="story-role">Program Director, Wellcome Trust Africa Initiative</div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-logo">African Union</div>
+                    <div class="story-quote">
+                        "ACNEI's pan-African network provides unique access to diverse populations crucial for neuroscience research."
+                    </div>
+                    <div class="story-author">Prof. James Washington</div>
+                    <div class="story-role">Director of International Research, NIH</div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="carousel-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources -->
+    <section class="resources-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Grant Resources</h2>
+                <p>Download our detailed proposals, impact reports, and partnership materials</p>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Grant Proposal</h3>
+                    <p>3-year strategic plan with budget, timeline, and expected outcomes</p>
+                    <a href="#" class="resource-btn">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Impact Report 2023</h3>
+                    <p>Detailed metrics and ROI analysis from previous funding cycles</p>
+                    <a href="#" class="resource-btn">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partnership Framework</h3>
+                    <p>Customizable partnership models and collaboration guidelines</p>
+                    <a href="#" class="resource-btn">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics -->
+    <section class="metrics-section">
+        <div class="container">
+            <div class="metrics-card">
+                <div class="metrics-header">
+                    <h3>Real-Time Impact Dashboard</h3>
+                    <span class="metrics-badge"><i class="fas fa-lock"></i> Funders Portal</span>
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-value" data-count="94">0%</div>
+                        <div class="metric-label">Grant Utilization</div>
+                        <div class="metric-trend up"><i class="fas fa-arrow-up"></i> 8%</div>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-value" data-count="28">0</div>
+                        <div class="metric-label">Papers in Progress</div>
+                        <div class="metric-trend up"><i class="fas fa-arrow-up"></i> 12</div>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-value" data-count="2100000">$0</div>
+                        <div class="metric-label">Leveraged Funding</div>
+                        <div class="metric-trend up"><i class="fas fa-arrow-up"></i> 3.2x</div>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-value">100%</div>
+                        <div class="metric-label">Grant Compliance</div>
+                        <div class="metric-trend"><i class="fas fa-check"></i> Perfect</div>
+                    </div>
+                </div>
+                
+                <p class="metrics-note"><i class="fas fa-info-circle"></i> Funders receive exclusive dashboard access</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="partners-section" id="partners">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Partners</h2>
+                <p>Collaborating with leading institutions to advance computational neuroscience in Africa</p>
+            </div>
+            
+            <div class="partners-grid">
+                <div class="partner-logo">African Union</div>
+                <div class="partner-logo">NIH</div>
+                <div class="partner-logo">Wellcome Trust</div>
+                <div class="partner-logo">Google AI</div>
+                <div class="partner-logo">UNESCO</div>
+                <div class="partner-logo">IBM Research</div>
+                <div class="partner-logo">Chan Zuckerberg</div>
+                <div class="partner-logo">Gates Foundation</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-card">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to receive our latest research, funding opportunities, and impact reports</p>
+                
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+                
+                <p class="privacy-note"><i class="fas fa-shield-alt"></i> We respect your privacy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Africa Computational Neuroscience Education Initiative</h3>
+                    <p>Building the future of brain research in Africa through computation, collaboration, and innovation.</p>
+                    <button class="cta-button footer-btn" id="openContactModal3">Contact Us Today</button>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="#programs"><i class="fas fa-chevron-right"></i> Programs</a></li>
+                        <li><a href="#team"><i class="fas fa-chevron-right"></i> Team</a></li>
+                        <li><a href="#grants"><i class="fas fa-chevron-right"></i> Grants</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria | Nairobi, Kenya</li>
+                        <li><i class="fas fa-envelope"></i> contact@acnei.org</li>
+                        <li><i class="fas fa-phone"></i> +234 807 828 2257</li>
+                        <li><i class="fas fa-globe"></i> www.acnei.org</li>
+                    </ul>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Africa Computational Neuroscience Education Initiative. All rights reserved.</p>
+                <p>Registered Non-Profit Organization | Tax-Exempt Status</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="index.js"></script>
+</body>
+</html>
