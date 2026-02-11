@@ -9,6 +9,7 @@ function initializeComponents() {
     initMobileMenu();
     initSmoothScrolling();
     initModal();
+    initProgramModal();
     initContactForm();
     initCarousel();
     initCounters();
@@ -111,23 +112,21 @@ function initModal() {
         document.getElementById('openContactModal2'),
         document.getElementById('openContactModal3')
     ].filter(btn => btn !== null); // Filter out null buttons
-
+    
     const closeButton = document.getElementById('closeModal');
-
+    
     console.log('Modal found:', !!modal);
     console.log('Open buttons found:', openButtons.length);
     console.log('Close button found:', !!closeButton);
-
+    
     function openModal() {
         console.log('Opening modal');
         if (modal) {
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
-        } else {
-            console.warn('Contact modal not found (id="contactModal")');
         }
     }
-
+    
     function closeModal() {
         console.log('Closing modal');
         if (modal) {
@@ -135,25 +134,25 @@ function initModal() {
             document.body.style.overflow = '';
         }
     }
-
+    
     // Open modal - FIXED: Check each button
     openButtons.forEach(button => {
         console.log('Adding click listener to button:', button.id);
         button.addEventListener('click', openModal);
     });
-
+    
     // Close modal
     if (closeButton) {
         closeButton.addEventListener('click', closeModal);
     }
-
+    
     // Close on overlay click
     if (modal) {
         modal.addEventListener('click', function(e) {
             if (e.target === this) closeModal();
         });
     }
-
+    
     // Close on Escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
@@ -162,175 +161,7 @@ function initModal() {
     });
 }
 
-
-// Program Details Modal - UPDATED TO MATCH YOUR HTML
-function initProgramModal() {
-    console.log('Initializing program modal...');
-
-    // ✅ MATCHES YOUR HTML IDs
-    const modal = document.getElementById('programModal');
-    const closeBtn = document.getElementById('closeProgramModal');
-    const primaryBtn = document.getElementById('programModalPrimaryCta');
-    const titleEl = document.getElementById('programModalTitle');
-    const contentEl = document.getElementById('programModalContent');
-    const mediaEl = document.getElementById('programModalImage');
-
-    // Debug: see what is null
-    console.log('Program modal elements:', {
-        modal,
-        closeBtn,
-        primaryBtn,
-        titleEl,
-        contentEl,
-        mediaEl
-    });
-
-    if (!modal || !closeBtn || !primaryBtn || !titleEl || !contentEl || !mediaEl) {
-        console.warn('Program modal elements missing. Skipping program modal init.');
-        return;
-    }
-
-    const programData = {
-        neurocomp: {
-            title: 'NeuroComp Africa',
-            image: "./images/neuroscience-academy.jpg",
-            text: "NeuroComp Africa makes learning more inclusive, accessible, and practical across Africa. Through regional hubs and blended learning, we provide hands-on training and early exposure to computational neuroscience—helping students build confidence and career direction.",
-            extraHtml: `
-                <h4 class="modal-subtitle">Streams</h4>
-                <ul>
-                    <li><strong>Stream I: High School Outreach (Under 18)</strong> — School visits and interactive sessions that introduce neuroscience careers and build basic computational skills. No prior coding or neuroscience background is required.</li>
-                    <li><strong>Stream II: Undergraduate & Post-High School Bootcamp (18+)</strong> — A blended program combining online modules, workshops, mentorship, and guided projects in computational neuroscience.</li>
-                </ul>
-                <p class="modal-note">Want ACNEI to partner with your school or support a hub? Email <strong>contact@acnei.org</strong>.</p>
-            `
-        },
-        network: {
-            title: 'Pan-African Research Network',
-            image: "./images/neuroscience-network-1.jpg",
-            text: "We connect researchers, institutions, and resources across Africa to support collaboration, shared learning, and joint research in computational neuroscience.",
-            extraHtml: `
-                <ul>
-                    <li>Collaboration and mentorship connections</li>
-                    <li>Shared learning and resource discovery</li>
-                    <li>Support for joint projects and publications</li>
-                </ul>
-                <p class="modal-note"><strong>Publication:</strong> Strength and perception of computational neuroscience among Nigerian students and early career researchers <a href="https://www.sciencedirect.com/science/article/pii/S2667242125001642?utm_source=chatgpt.com">(DOI: 10.1016/j.ibneur.2025.10.015)</a></p>
-            `
-        },
-        tools: {
-            title: 'Open-Source Neuroscience Tools',
-            image: "./images/neuroscience-research.jpg",
-            text: "We’re building free, open-source tools and learning resources to support neuroscience learning and research across Africa—especially for beginners and low-resource settings.",
-            extraHtml: `
-                <h4 class="modal-subtitle">What we’re building</h4>
-                <ul>
-                    <li>Brain data analysis (spikes, LFP, EEG)</li>
-                    <li>Neural simulations and modeling</li>
-                    <li>Machine learning for neuroscience</li>
-                    <li>Hands-on coding practice</li>
-                </ul>
-                <p class="modal-note">Work in progress — new tools and learning modules are added regularly. To contribute or collaborate, email <strong>contact@acnei.org</strong>.</p>
-            `
-        },
-        workshops: {
-            title: 'Workshop Series',
-            image: "./images/neuroscience-workshop.jpg",
-            text: "Our virtual workshops bring together students, educators, and early-career researchers to learn practical skills in neuroscience, programming, and data science—designed to be beginner-friendly and applicable to real research problems.",
-            extraHtml: `
-                <ul>
-                    <li>Short, practical sessions</li>
-                    <li>Beginner-friendly learning and guided practice</li>
-                    <li>Skills you can apply to real research</li>
-                </ul>
-                <p class="modal-note">Join the waitlist (link will be added soon). For questions, email <strong>contact@acnei.org</strong>.</p>
-            `
-        }
-    };
-
-    let lastFocused = null;
-
-    function openProgramModal(key) {
-        console.log('Opening program modal with key:', key);
-
-        const data = programData[key];
-        if (!data) {
-            console.warn('No program data found for key:', key);
-            return;
-        }
-
-        lastFocused = document.activeElement;
-
-        // Fill title
-        titleEl.textContent = data.title;
-
-        // Fill image (your HTML uses programModalImage)
-        mediaEl.style.backgroundImage = `url('${data.image}')`;
-
-        // Fill content (your HTML uses programModalContent)
-        // Put text + extraHtml into one container
-        contentEl.innerHTML = `
-            <p>${data.text}</p>
-            ${data.extraHtml || ""}
-        `;
-
-        modal.classList.add('active');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-
-        // Focus for accessibility
-        closeBtn.focus();
-    }
-
-    function closeProgramModal() {
-        console.log('Closing program modal');
-
-        modal.classList.remove('active');
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-
-        if (lastFocused && typeof lastFocused.focus === 'function') {
-            lastFocused.focus();
-        }
-    }
-
-    // Bind triggers (Read more buttons)
-    const triggers = document.querySelectorAll('.program-readmore');
-    console.log('Found program readmore buttons:', triggers.length);
-
-    triggers.forEach(btn => {
-        btn.addEventListener('click', () => {
-            openProgramModal(btn.dataset.program);
-        });
-    });
-
-    // Close actions
-    closeBtn.addEventListener('click', closeProgramModal);
-    primaryBtn.addEventListener('click', closeProgramModal);
-
-    // Close on overlay click
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeProgramModal();
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeProgramModal();
-        }
-    });
-}
-
-
-// ✅ AUTO-RUN INIT AFTER DOM LOADS
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded — initializing modals...');
-    initModal();
-    initProgramModal();
-});
-
-
-
-// Contact Form 
+// Contact Form - FIXED
 function initContactForm() {
     console.log('Initializing contact form...');
     const form = document.getElementById('contactForm');
@@ -681,6 +512,119 @@ function initGallery() {
     });
 }
 
+
+// Program Modal (Read more)
+function initProgramModal() {
+    console.log('Initializing program modal...');
+    const modal = document.getElementById('programModal');
+    const closeButton = document.getElementById('closeProgramModal');
+    const titleEl = document.getElementById('programModalTitle');
+    const imageEl = document.getElementById('programModalImage');
+    const contentEl = document.getElementById('programModalContent');
+    const primaryCta = document.getElementById('programModalPrimaryCta');
+
+    if (!modal || !titleEl || !imageEl || !contentEl) {
+        console.warn('Program modal elements not found. Skipping.');
+        return;
+    }
+
+    const programs = {
+        neurocomp: {
+            title: 'NeuroComp Africa',
+            image: "./images/neuroscience-academy.jpg",
+            contentHtml: `
+                <p>NeuroComp Africa is designed to make learning inclusive, accessible, and practical across Africa. Through regional hubs, we provide hands-on training and early exposure—helping students build confidence and direction before graduation.</p>
+                <h4>Streams</h4>
+                <ul>
+                    <li><strong>Stream I: High School Outreach (Under 18)</strong> — School visits and interactive sessions that introduce neuroscience careers and build foundational computational skills. No prior coding or neuroscience background is required.</li>
+                    <li><strong>Stream II: Undergraduate &amp; Post-High School Bootcamp (18+)</strong> — A blended program combining online learning, workshops, mentorship, and guided projects. Participants gain practical skills and exposure to real computational neuroscience research.</li>
+                </ul>
+                <p><strong>Want to partner or apply?</strong> Use the buttons on the program card (links can be added later).</p>
+            `
+        },
+        network: {
+            title: 'Pan-African Research Network',
+            image: "./images/neuroscience-network-1.jpg",
+            contentHtml: `
+                <p>We connect researchers, institutions, and resources across Africa to support collaboration in computational neuroscience.</p>
+                <ul>
+                    <li>Collaborative projects and shared learning</li>
+                    <li>Connections for mentorship and co-supervision</li>
+                    <li>Opportunities for joint publications and resource sharing</li>
+                </ul>
+                <p><strong>Publication:</strong> <em>Strength and perception of computational neuroscience among Nigerian students and early career researchers</em> (DOI: 10.1016/j.ibneur.2025.10.015)</p>
+            `
+        },
+        tools: {
+            title: 'Open-Source Neuroscience Tools',
+            image: "./images/neuroscience-research.jpg",
+            contentHtml: `
+                <p>We are building a growing collection of free, open-source tools and educational resources to support neuroscience learning and research across Africa.</p>
+                <p>These include simple data-analysis scripts, interactive notebooks, beginner-friendly tutorials, and low-cost hardware ideas that anyone can access and use.</p>
+                <h4>What we’re building tools for</h4>
+                <ul>
+                    <li>Brain data analysis (spikes, LFP, EEG)</li>
+                    <li>Neural simulations and modeling</li>
+                    <li>Machine learning for neuroscience</li>
+                    <li>Hands-on coding practice</li>
+                </ul>
+                <p><strong>Status:</strong> Work in progress — new tools and learning modules are added regularly.</p>
+                <p>If you'd like to contribute or collaborate, email <strong>contact@acnei.org</strong>.</p>
+            `
+        },
+        workshops: {
+            title: 'Workshop Series',
+            image: "./images/neuroscience-workshop.jpg",
+            contentHtml: `
+                <p>Our virtual workshop series brings together students, educators, and early-career researchers to learn practical skills in neuroscience, programming, and data science.</p>
+                <ul>
+                    <li>Beginner-friendly and hands-on</li>
+                    <li>Focused on real research problems</li>
+                    <li>Designed for skill-building and confidence</li>
+                </ul>
+                <p>Join the waitlist to be the first to know when the workshop series opens.</p>
+            `
+        }
+    };
+
+    function openModal(key) {
+        const data = programs[key];
+        if (!data) return;
+
+        titleEl.textContent = data.title;
+        imageEl.style.backgroundImage = `url('${data.image}')`;
+        contentEl.innerHTML = data.contentHtml;
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.program-readmore').forEach(btn => {
+        btn.addEventListener('click', () => openModal(btn.dataset.program));
+    });
+
+    // Secondary CTA can also open modal for now (since links will be added later)
+    document.querySelectorAll('.program-cta').forEach(btn => {
+        btn.addEventListener('click', () => openModal(btn.dataset.program));
+    });
+
+    if (closeButton) closeButton.addEventListener('click', closeModal);
+    if (primaryCta) primaryCta.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
+}
+
 // Utility Functions
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -710,8 +654,3 @@ window.addEventListener('load', function() {
         console.log(`${id}:`, btn ? 'FOUND' : 'NOT FOUND');
     });
 });
-
-document.querySelector('.hide-text-btn').addEventListener('click', () => {
-    document.querySelector('.hidden-teams').style.display = 'contents';
-    document.querySelector('.hide-text-btn').style.display = 'none';
-})
