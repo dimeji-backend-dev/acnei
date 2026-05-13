@@ -1,3 +1,6 @@
+import facultyData from './faculty.js';
+import instructorsData from './instructor.js'
+
 // script.js - FIXED VERSION
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded - initializing components');
@@ -9,6 +12,7 @@ function initializeComponents() {
     initMobileMenu();
     initSmoothScrolling();
     initModal();
+    initProgramModal();
     initContactForm();
     initCarousel();
     initCounters();
@@ -192,16 +196,62 @@ function initProgramModal() {
 
     const programData = {
         neurocomp: {
-            title: 'NeuroComp Africa',
-            image: "./images/neuroscience-academy.jpg",
-            text: "NeuroComp Africa makes learning more inclusive, accessible, and practical across Africa. Through regional hubs and blended learning, we provide hands-on training and early exposure to computational neuroscience—helping students build confidence and career direction.",
+            title: 'ACNEI Computational Neuroscience Introductory School.',
+            image: "./images/call-for-application.jpg",
+            text: "",
             extraHtml: `
-                <h4 class="modal-subtitle">Streams</h4>
+                <div>
+                <h3 class="modal-subtitle">CALL FOR APPLICATIONS</h3>
+                <strong>African Computational Neuroscience Educational Initiative (ACNEI) <br> 10-Day Introductory Online Training</strong>
+                <p><strong>Theme:</strong> Foundations of Computational Neuroscience for Young African Scholars</p>
+                </div>
+                
+                <p>The African Computational Neuroscience Educational Initiative (ACNEI) is pleased to announce a <strong>10-day introductory online training program</strong> designed to inspire and equip post-high school and undergraduate students across Africa with foundational skills in neuroscience, computation, and data-driven thinking. Computational neuroscience sits at the intersection of brain science, artificial intelligence, data science, and medicine. Yet, access to training in this field remains limited across much of Africa. This program is designed to democratize access, build early confidence, and prepare students for deeper engagement in neuroscience and AIrelated careers.</p>
+
+		<h4 class="modal-subtitle">Program Overview.</h4>
                 <ul>
-                    <li><strong>Stream I: High School Outreach (Under 18)</strong> — School visits and interactive sessions that introduce neuroscience careers and build basic computational skills. No prior coding or neuroscience background is required.</li>
-                    <li><strong>Stream II: Undergraduate & Post-High School Bootcamp (18+)</strong> — A blended program combining online modules, workshops, mentorship, and guided projects in computational neuroscience.</li>
+	                <li><strong>Dates:</strong> 11th - 22nd May, 2026; Training at specific regional hubs (optional): 25-28th May, 2026</li>
+			<li><strong>Format:</strong> Fully Online</li>
+			<li><strong>Duration:</strong> Two-week (2 hours per day)</li>
+			<li><strong>Target Group:</strong> Post-high school students & early undergraduates across Africa</li>
+			<li><strong>Cost:</strong> Free (selection-based)</li>
                 </ul>
-                <p class="modal-note">Want ACNEI to partner with your school or support a hub? Email <strong>contact@acnei.org</strong>.</p>
+                
+                <h4 class="modal-subtitle">What You Will Learn.</h4>
+                <strong>Participant will</strong>
+                <ul>
+	                <li>Understand how the brain works and why computation matters</li>
+			<li>Learn beginner-friendly Python programming for neuroscience</li>
+			<li>Explore neurons and neural networks as computational systems</li>
+			<li>Build hands-on mini-projects (no prior coding required)</li>
+			<li>Engage with African-centered neuroscience and AI examples</li>
+			<li>Receive mentorship and career guidance from global experts</li>
+                </ul>
+                
+                <h4 class="modal-subtitle">Who Should Apply?</h4>
+                <strong>We strongly encourage applications from:</strong>
+                <ul>
+	                <li>African post-high school students, gap-year students, and undergraduates</li>
+			<li>African students with interests in biology, medicine, engineering, computer science, psychology, AI, neuroscience or data science</li>
+			<li>Applicants with little or no prior coding experience</li>
+			<li>Students from underrepresented regions and backgrounds</li>
+                </ul>
+                
+                <h4 class="modal-subtitle">Benefits.</h4>
+                <ul>
+	                <li>Certificate of completion</li>
+			<li>Access to ACNEI mentorship and alumni network</li>
+			<li>Priority consideration for advanced ACNEI programs & regional hubs</li>
+			<li>Exposure to global open-science and neuroscience communities</li>
+                </ul>
+                
+                <h4 class="modal-subtitle">Application Details.</h4>
+                <ul>
+	                <li>Application Deadline: March 29th, 2026</li>
+			<li>Pogram Start: 11th May 2026</li>
+			<li><a href="https://forms.gle/91suvgbUq1QrJXCm8" target="_blank">Apply here</a></li>
+                </ul>
+                <p class="modal-note">For inquiries: Email <strong>contact@acnei.org</strong>.</p>
             `
         },
         network: {
@@ -214,7 +264,7 @@ function initProgramModal() {
                     <li>Shared learning and resource discovery</li>
                     <li>Support for joint projects and publications</li>
                 </ul>
-                <p class="modal-note"><strong>Publication:</strong> Strength and perception of computational neuroscience among Nigerian students and early career researchers <a href="https://www.sciencedirect.com/science/article/pii/S2667242125001642?utm_source=chatgpt.com">(DOI: 10.1016/j.ibneur.2025.10.015)</a></p>
+                <p class="modal-note"><strong>Publication:</strong> Strength and perception of computational neuroscience among Nigerian students and early career researchers <a href="https://www.sciencedirect.com/science/article/pii/S2667242125001642?via=ihub" target="_blank">(DOI: 10.1016/j.ibneur.2025.10.015)</a></p>
             `
         },
         tools: {
@@ -234,7 +284,7 @@ function initProgramModal() {
         },
         workshops: {
             title: 'Workshop Series',
-            image: "./images/neuroscience-workshop.jpg",
+            image: "./images/workshop.png",
             text: "Our virtual workshops bring together students, educators, and early-career researchers to learn practical skills in neuroscience, programming, and data science—designed to be beginner-friendly and applicable to real research problems.",
             extraHtml: `
                 <ul>
@@ -644,7 +694,7 @@ function initTypingAnimation() {
     // Clear any existing text
     element.textContent = '';
     
-    const text = "Africa Computational Neuroscience Education Initiative";
+    const text = "African Computational Neuroscience Educational Initiative";
     const speed = 50;
     let i = 0;
     
@@ -656,7 +706,6 @@ function initTypingAnimation() {
         } else {
             // Add cursor blink
             element.classList.add('typing-complete');
-            console.log('Typing animation complete');
         }
     }
     
@@ -715,3 +764,324 @@ document.querySelector('.hide-text-btn').addEventListener('click', () => {
     document.querySelector('.hidden-teams').style.display = 'contents';
     document.querySelector('.hide-text-btn').style.display = 'none';
 })
+
+// Save form data to localStorage
+function saveFormData() {
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        organization: document.getElementById('organization').value
+    };
+    localStorage.setItem('contactFormDraft', JSON.stringify(formData));
+}
+
+// Load saved data
+function loadFormData() {
+    const saved = localStorage.getItem('contactFormDraft');
+    if (saved) {
+        const data = JSON.parse(saved);
+        Object.keys(data).forEach(key => {
+            const field = document.getElementById(key);
+            if (field) field.value = data[key] || '';
+        });
+    }
+}
+
+function normalizeImageUrl(imagePath) {
+    if (!imagePath) return '/images/default-avatar.jpg';
+
+    let normalized = imagePath.trim();
+
+    if (normalized.startsWith('../')) {
+        normalized = normalized.replace(/^\.\.\//, '/');
+    } else if (normalized.startsWith('./')) {
+        normalized = normalized.replace(/^\.\//, '/');
+    }
+
+    if (!normalized.startsWith('/') && !normalized.startsWith('http')) {
+        normalized = '/' + normalized;
+    }
+
+    return normalized;
+}
+
+function initFacultySection() {
+    const facultyGrid = document.getElementById('facultyGrid');
+    const viewAllBtn = document.getElementById('viewAllFacultyBtn');
+    if (!facultyGrid) return;
+
+    // Render all cards initially, but hide extras
+    facultyGrid.innerHTML = '';
+    facultyData.forEach((member, index) => {
+        const card = createFacultyCard(member, index);
+        facultyGrid.appendChild(card);
+    });
+
+    // Initially only show first 3 cards
+    const allCards = document.querySelectorAll('.faculty-card');
+    allCards.forEach((card, idx) => {
+        if (idx >= 3) {
+            card.style.display = 'none';
+        }
+    });
+
+    // Toggle view all
+    let showingAll = false;
+    if (viewAllBtn) {
+        viewAllBtn.addEventListener('click', () => {
+            showingAll = !showingAll;
+            allCards.forEach((card, idx) => {
+                if (showingAll) {
+                    card.style.display = 'flex'; // or block
+                } else {
+                    if (idx >= 3) card.style.display = 'none';
+                    else card.style.display = 'flex';
+                }
+            });
+            viewAllBtn.innerHTML = showingAll ? 
+                '<i class="fas fa-compress"></i> Show Less' : 
+                '<i class="fas fa-users"></i> View All Faculty Members';
+        });
+    }
+}
+
+function createFacultyCard(member, index) {
+    const card = document.createElement('div');
+    card.className = 'faculty-card';
+    card.setAttribute('data-id', member.id);
+
+    // Image placeholder (use actual image or a default)
+    const imageUrl = normalizeImageUrl(member.image);
+
+    // Expertise tags
+    const expertiseHtml = member.expertise.map(tag => 
+        `<span class="expertise-tag">${tag}</span>`
+    ).join('');
+
+    card.innerHTML = `
+        <div class="faculty-img-wrapper">
+            <div class="faculty-img" style="background-image: url('${imageUrl}');"></div>
+            <div class="faculty-social">
+                <a href="${member.social.linkedin}" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="${member.social.twitter}" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="${member.social.website}" target="_blank"><i class="fas fa-globe"></i></a>
+            </div>
+        </div>
+        <div class="faculty-info">
+            <div class="faculty-header">
+                <h4>${member.name}</h4>
+                <!--<span class="faculty-badge">Faculty</span> -->
+            </div>
+            <div class="faculty-institution">${member.institution}</div>
+            <div class="faculty-bio">${member.bio.substring(0, 120)}${member.bio.length > 120 ? '...' : ''}</div>
+            <button class="faculty-bio-toggle" data-id="${member.id}">Read more <i class="fas fa-arrow-right"></i></button>
+        </div>
+    `;
+
+    // Attach event listener for read more
+    const readMoreBtn = card.querySelector('.faculty-bio-toggle');
+    readMoreBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openFacultyModal(member);
+    });
+
+    return card;
+}
+
+// Modal handling
+let currentFacultyModal = null;
+
+function openFacultyModal(member) {
+    const modalOverlay = document.getElementById('facultyModal');
+    const modalTitle = document.getElementById('facultyModalTitle');
+    const modalContent = document.getElementById('facultyModalContent');
+    const closeBtn = document.getElementById('closeFacultyModal');
+
+    if (!modalOverlay || !modalTitle || !modalContent) return;
+
+    // Build modal content
+    const expertiseHtml = member.expertise.map(tag => `<span class="expertise-tag">${tag}</span>`).join('');
+    const publicationsHtml = member.publications.map(pub => `<li>${pub}</li>`).join('');
+    const achievementsHtml = member.achievements.map(ach => `<li>${ach}</li>`).join('');
+
+    const facultyImage = normalizeImageUrl(member.image);
+    console.log('Faculty modal image URL:', facultyImage);
+
+    modalContent.innerHTML = `
+        <div class="faculty-modal-layout">
+            <div class="faculty-modal-image">
+                <img src="${facultyImage}" alt="${member.name}" class="faculty-modal-img" />
+            </div>
+            <div class="faculty-modal-details">
+                <h4>${member.name}</h4>
+                <div class="faculty-modal-institution">${member.institution}</div>
+                <div class="faculty-modal-bio">${member.bio}</div>
+                
+                ${member.publications.length ? `
+                <div class="faculty-modal-publications">
+                    <h5>Selected Publications</h5>
+                    <ul>${publicationsHtml}</ul>
+                </div>
+                ` : ''}
+                
+                ${member.achievements.length ? `
+                <div class="faculty-modal-publications">
+                    <h5>Achievements & Awards</h5>
+                    <ul>${achievementsHtml}</ul>
+                </div>
+                ` : ''}
+                
+                <div class="faculty-modal-social">
+                    <a href="${member.social.linkedin}" class="faculty-modal-social-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="${member.social.twitter}" class="faculty-modal-social-link" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="${member.social.website}" class="faculty-modal-social-link" target="_blank"><i class="fas fa-globe"></i> Website</a>
+                </div>
+            </div>
+        </div>
+    `;
+
+    modalTitle.textContent = member.name;
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Store reference for closing
+    currentFacultyModal = modalOverlay;
+
+    // Close handlers
+    const closeModal = () => {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        currentFacultyModal = null;
+    };
+
+    closeBtn.onclick = closeModal;
+    modalOverlay.onclick = (e) => {
+        if (e.target === modalOverlay) closeModal();
+    };
+}
+
+// Call initFacultySection after DOM loads
+document.addEventListener('DOMContentLoaded', () => {
+    // ... existing initializations
+    initFacultySection();  // <-- Add this line
+});
+
+// Announcement Banner Close Functionality
+// document.addEventListener('DOMContentLoaded', function() {
+//     const closeBtn = document.getElementById('closeAnnouncement');
+//     const announcementBanner = document.querySelector('.announcement-banner');
+    
+//     if (closeBtn && announcementBanner) {
+//         // Check if the banner was closed before (optional persistence)
+//         const isClosed = localStorage.getItem('announcementClosed');
+        
+//         if (isClosed === 'true') {
+//             announcementBanner.style.display = 'none';
+//         }
+        
+//         closeBtn.addEventListener('click', function() {
+//             announcementBanner.style.display = 'none';
+//             // Optional: Store in localStorage to keep it closed for the session
+//             localStorage.setItem('announcementClosed', 'true');
+//         });
+//     }
+// });
+
+// Function to render instructor cards
+function renderInstructors(showAll = false) {
+    const grid = document.getElementById('instructorsGrid');
+    if (!grid) return;
+    
+    // Clear grid but preserve load more button position
+    grid.innerHTML = '';
+    
+    const itemsToShow = showAll ? instructorsData.length : 3;
+    
+    instructorsData.forEach((instructor, index) => {
+        const card = document.createElement('div');
+        card.className = 'instructor-card';
+        if (!showAll && index >= 3) {
+            card.classList.add('hidden-instructor');
+        }
+        card.setAttribute('data-instructor-index', index);
+        card.innerHTML = `
+            <div class="instructor-image">
+                <img src="${instructor.image}" alt="${instructor.name}">
+            </div>
+            <div class="instructor-info">
+                <h3>${instructor.name}</h3>
+                <p class="instructor-title">${instructor.title}</p>
+                <p class="instructor-affiliation">${instructor.affiliation}</p>
+                <div class="instructor-bio-short">
+                    ${instructor.bio.substring(0, 100)}...
+                </div>
+            </div>
+        `;
+        card.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openModal(index);
+        });
+        grid.appendChild(card);
+    });
+    
+    // Update load more button visibility
+    const loadMoreContainer = document.getElementById('instructorsLoadMore');
+    if (loadMoreContainer) {
+        if (showAll || instructorsData.length <= 3) {
+            loadMoreContainer.style.display = 'none';
+        } else {
+            loadMoreContainer.style.display = 'block';
+        }
+    }
+}
+
+// Modal logic
+const modal = document.getElementById("instructorModal");
+const closeModal = document.querySelector(".instructor-modal-close");
+const modalImg = document.getElementById("modalImg");
+const modalName = document.getElementById("modalName");
+const modalTitle = document.getElementById("modalTitle");
+const modalAffiliation = document.getElementById("modalAffiliation");
+const modalBio = document.getElementById("modalBio");
+const modalTwitter = document.getElementById("modalTwitter");
+const modalLinkedin = document.getElementById("modalLinkedin");
+const modalEmail = document.getElementById("modalEmail");
+
+function openModal(index) {
+    const instructor = instructorsData[index];
+    if (!instructor) return;
+    modalImg.src = instructor.image;
+    modalName.textContent = instructor.name;
+    modalTitle.textContent = instructor.title;
+    modalAffiliation.textContent = instructor.affiliation;
+    modalBio.textContent = instructor.bio;
+    modalTwitter.href = instructor.twitter;
+    modalLinkedin.href = instructor.linkedin;
+    modalEmail.href = `mailto:${instructor.email}`;
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+
+closeModal.onclick = () => {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+};
+window.onclick = (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+};
+
+// Load more button logic
+let showingAll = false;
+const loadMoreBtn = document.getElementById('loadMoreBtn');
+if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+        showingAll = true;
+        renderInstructors(true);
+    });
+}
+
+// Initial render (show only first 3)
+renderInstructors(false);

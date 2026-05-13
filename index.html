@@ -4,10 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Africa Computational Neuroscience Education Initiative (ACNEI)</title>
+    <meta name="description" content="Expanding computational neuroscience education and early exposure across Africa through training, mentorship, and collaboration.">
+    <meta name="keywords" content="neuroscience, Africa, computational neuroscience, education, research, acnei">
+    <meta property="og:title" content="ACNEI - Africa Computational Neuroscience Educational Initiative">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.acnei.org">
+    <meta property="og:image" content="./images/acnei-og-image.jpg">
+    <title>Africa Computational Neuroscience Educational Initiative (ACNEI)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     <!-- Header -->
@@ -18,8 +24,8 @@
                     <img src="./images/acnei-logo.svg" alt="ACNEI logo" class="logo-img">
                     <div class="logo-text">ACN<span>EI</span></div></a>
                 
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
                 
                 <div class="nav-container" id="navContainer">
@@ -28,9 +34,8 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#programs">Programs</a></li>
                         <li><a href="#team">Team</a></li>
-                        <li><a href="#impact">Impact</a></li>
-                        <li><a href="#grants">Grants</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#faculty">Faculty</a></li>
+                        <li><a href="#instructor">Instructors</a></li>
                         <li><a href="#stories">Success</a></li>
                         <li><a href="#partners">Partners</a></li>
                     </ul>
@@ -41,7 +46,7 @@
     </header>
 
     <!-- Contact Modal -->
-    <div class="modal-overlay" id="contactModal">
+    <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="contact-modal">
             <div class="modal-header">
                 <h3>Contact Us</h3>
@@ -121,6 +126,37 @@
         </div>
     </section>
 
+    <!-- Announcement Banner -->
+    <section class="announcement-banner" id="announcement">
+        <div class="container">
+            <div class="announcement-content">
+                <div class="announcement-icon">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <div class="announcement-text">
+                    <span class="announcement-badge">📢 Announcement</span>
+                    <h3>Applications Are Now Closed!</h3>
+                    <p>
+                        We received <strong>886 applications</strong> from <strong>33 countries</strong> across Africa for the ACNEI Computational Neuroscience Introductory School.<br><br>
+                        As our inaugural program, this level of interest reflects the growing curiosity and demand for computational neuroscience education across the continent.<br><br>
+                        The highest number of applications came from Nigeria, Ghana, Egypt, Kenya, and Uganda, with representation spanning multiple regions across Africa.<br><br>
+                        The strong response highlights the increasing interest among young African scholars to explore the intersection of neuroscience and computation.<br><br>
+                        We sincerely thank every applicant for your time, effort, and interest.<br><br>
+                        The selection process begins and all applicants will hear from us soon. We look forward to welcoming our first cohort soon.
+                    </p>
+                    <div class="announcement-date">
+                        <i class="far fa-calendar-alt"></i> Posted 21st of April, 2026
+                    </div>
+                </div>
+                <div class="announcement-actions">
+                    <button class="announcement-close" id="closeAnnouncement" aria-label="Close announcement">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Mission & Vision -->
     <section class="mission-vision" id="about">
         <div class="container">
@@ -173,13 +209,13 @@
             <div class="programs-grid">
                 <!-- Program 1 -->
                 <div class="program-card">
-                    <div class="program-img" style="background-image: url('./images/neuroscience-academy.jpg');"></div>
+                    <div class="program-img" style="background-image: url('./images/call-for-application.jpg');"></div>
                     <div class="program-content">
-                        <h3>NeuroComp Africa</h3>
+                        <h3>ACNEI Computational Neuroscience Introductory School.</h3>
                         <p>Early exposure and hands-on learning for high school and undergraduate learners—through regional hubs, mentorship, and guided projects.</p>
                         <div class="program-actions">
                             <button class="cta-button program-btn program-readmore" data-program="neurocomp">Read more</button>
-                            <button class="cta-button program-btn secondary program-cta" data-program="neurocomp" id="openContactModal2">Apply / Partner</button>
+                            <button class="cta-button program-btn secondary program-cta" data-program="neurocomp"><a href="https://forms.gle/91suvgbUq1QrJXCm8">Apply</a></button>
                         </div>
                     </div>
                 </div>
@@ -189,7 +225,7 @@
                     <div class="program-img" style="background-image: url('./images/neuroscience-network-1.jpg');"></div>
                     <div class="program-content">
                         <h3>Pan-African Research Network</h3>
-                        <p>Connecting researchers, institutions, and resources across Africa to support collaboration, data sharing, and joint publications.</p>
+                        <p>Connecting researchers, institutions, and resources across Africa to support collaboration, shared learning, and joint publications.</p>
                         <div class="program-actions">
                             <button class="cta-button program-btn program-readmore" data-program="network">Read more</button>
                             <button class="cta-button program-btn secondary program-cta" data-program="network" id="openContactModal2">Join</button>
@@ -248,17 +284,17 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Leadership Team</h2>
-                <p>Meet the experts driving computational neuroscience forward in Africa</p>
+                <p>Meet the team driving computational neuroscience forward in Africa</p>
             </div>
             
             <div class="team-grid">
                 <div class="team-card">
-                    <div class="team-img" style="background-image: url('../images/Gideon-Alex.png');"></div>
+                    <div class="team-img" style="background-image: url('./images/Gideon-Alex.png');"></div>
                     <div class="team-info">
-                        <h4>Alex Gideon</h4>
+                        <h4>Alex Gideon (Nigeria)</h4>
                         <p class="team-role">Executive Director</p>
                         <div class="team-social">
-                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/gideon-alex-91b31a2b1"><i class="fa-brands fa-linkedin"></i></a>
                             <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
@@ -267,8 +303,32 @@
                 <div class="team-card">
                     <div class="team-img" style="background-image: url('./images/martina12.png');"></div>
                     <div class="team-info">
-                        <h4>Martina Anene-Ogbe</h4>
+                        <h4>Martina Anene-Ogbe (Nigeria)</h4>
                         <p class="team-role">Science Communications Lead</p>
+                        <div class="team-social">
+                            <a href="https://www.linkedin.com/in/martinaanene?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-img" style="background-image: url('./images/dr-ronald.png');"></div>
+                    <div class="team-info">
+                        <h4>Dr. Ronald Omolo (Uganda)</h4>
+                        <p class="team-role">Program Development Lead</p>
+                        <div class="team-social">
+                            <a href="https://www.linkedin.com/in/omolo-ouma-ronald-1b951619a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-img" style="background-image: url('./images/mary-achieng.png');"></div>
+                    <div class="team-info">
+                        <h4>Mary Achieng (Kenya)</h4>
+                        <p class="team-role">Head, Training Instructors</p>
                         <div class="team-social">
                             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                             <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
@@ -277,61 +337,51 @@
                 </div>
                 
                 <div class="team-card">
-                    <div class="team-img" style="background-image: url('./images/tolulope.jpg');"></div>
-                    <div class="team-info">
-                        <h4>Tolulope Gbayisomore</h4>
-                        <p class="team-role">Training & Operations Lead</p>
-                        <div class="team-social">
-                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- hide the rest of the teams-->
-                 <div class="hidden-teams" style="display: none;">
-                <div class="team-card">
                     <div class="team-img" style="background-image: url('./images/Dr-betrand.png');"></div>
                     <div class="team-info">
-                        <h4>Dr. Wanyu Betrand</h4>
+                        <h4>Dr. Wanyu Bertrand (Cameroon)</h4>
                         <p class="team-role">Digital Resources and Research Lead</p>
                         <div class="team-social">
-                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="www.linkedin.com/in/wanyu-bertrand-922824220"><i class="fa-brands fa-linkedin"></i></a>
                             <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <div class="team-card">
-                    <div class="team-img" style="background-image: url('./images/dr-ronald.png');"></div>
-                    <div class="team-info">
-                        <h4>Dr. Ronald</h4>
-                        <p class="team-role">Program Development Lead</p>
-                        <div class="team-social">
-                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-
+                
                 <div class="team-card">
                     <div class="team-img" style="background-image: url('./images/anita.png');"></div>
                     <div class="team-info">
-                        <h4>Anita Esi Eshun</h4>
-                        <p class="team-role">Regional Representative</p>
+                        <h4>Anita Esi Eshun (Ghana)</h4>
+                        <p class="team-role">West Africa Regional Representative</p>
                         <div class="team-social">
                             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                             <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
                 </div>
+                
+                <!-- hide the rest of the teams-->
+                 <div class="hidden-teams" style="display: none;">
 
                 <div class="team-card">
-                    <div class="team-img" style="background-image: url('./images/dr-champion.png');"></div>
+                    <div class="team-img" style="background-image: url('./images/tolulope.jpg');"></div>
                     <div class="team-info">
-                        <h4>Dr Champion</h4>
+                        <h4>Tolulope Gbayisomore (Nigeria)</h4>
+                        <p class="team-role">Training & Operations Lead</p>
+                        <div class="team-social">
+                            <a href="https://www.linkedin.com/in/tolulope-gbayisomore-111a7b261"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-img" style="background-image: url('./images/dr-champions.png');"></div>
+                    <div class="team-info">
+                        <h4>Dr Champion Lumamba (Zambia)</h4>
                         <p class="team-role">Southern Africa Regional Coordinator</p>
                         <div class="team-social">
-                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/dr-champion-lumamba-16aa4b263"><i class="fa-brands fa-linkedin"></i></a>
                             <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
@@ -340,7 +390,7 @@
                 <div class="team-card">
                     <div class="team-img" style="background-image: url('./images/lesley.png');"></div>
                     <div class="team-info">
-                        <h4>Lesley Mahagueheme</h4>
+                        <h4>Lesley Mahagueheme (Cameroon)</h4>
                         <p class="team-role">Central Africa Regional Coordinator</p>
                         <div class="team-social">
                             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
@@ -352,7 +402,7 @@
                 <div class="team-card">
                     <div class="team-img" style="background-image: url('./images/akanni.png');"></div>
                     <div class="team-info">
-                        <h4>Akanni Oladimeji</h4>
+                        <h4>Akanni Oladimeji (Nigeria)</h4>
                         <p class="team-role">IT & Systems Specialist</p>
                         <div class="team-social">
                             <a href="https://www.linkedin.com/in/qudusakanni/"><i class="fa-brands fa-linkedin"></i></a>
@@ -360,303 +410,260 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="team-card">
+                    <div class="team-img" style="background-image: url('./images/mavuso.jpeg');"></div>
+                    <div class="team-info">
+                        <h4>Sphesihle Mavuso (South Africa)</h4>
+                        <p class="team-role">Media Manager</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://x.com/AncestorOfLasu"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
                 </div> <!--End of hidden teams-->
             </div>
-            <button class="cta-button program-btn hide-text-btn btn">See All</button>
-
-        </div>
-    </section>
-
-    <!-- Gallery -->
-     <!---
-    <section class="gallery-section" id="gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2>In Action</h2>
-                <p>Our work across Africa - training, research, and community building</p>
+            <div style="margin-top: 20px">
+                <button class="cta-button program-btn hide-text-btn btn">See All</button>
             </div>
             
-            <div class="gallery-grid">
-                <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Workshop">
-                    <div class="gallery-overlay">
-                        <h4>Nairobi Workshop 2023</h4>
-                        <p>Training 50 researchers from East Africa</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Lab">
-                    <div class="gallery-overlay">
-                        <h4>Advanced Research Lab</h4>
-                        <p>New facility in Accra, Ghana</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Conference">
-                    <div class="gallery-overlay">
-                        <h4>Annual Conference</h4>
-                        <p>Pan-African Computational Neuroscience Summit</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Research">
-                    <div class="gallery-overlay">
-                        <h4>Field Research</h4>
-                        <p>Collecting neural data in rural communities</p>
-                    </div>
+
+        </div>
+    </section>
+    
+    <!-- Faculty Section -->
+
+<!-- Faculty Section -->
+<section class="faculty-section" id="faculty">
+    <div class="container">
+        <div class="section-title">   <!-- Changed from section-header -->
+            <h2>Our Faculty</h2>
+            <p>Meet our distinguished team of educators and mentors</p>
+        </div>
+
+        <div class="faculty-grid" id="facultyGrid">
+            <!-- Faculty cards will be injected here by JavaScript -->
+        </div>
+
+        <div class="faculty-footer">
+            <button class="cta-button faculty-view-all" id="viewAllFacultyBtn">
+                <i class="fas fa-users"></i> View All Faculty Members
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Faculty Modal -->
+<div id="facultyModal" class="modal-overlay">
+    <div class="faculty-bio-modal">
+        <div class="modal-header">
+            <h3 id="facultyModalTitle">Faculty Details</h3>
+            <button class="close-modal" id="closeFacultyModal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div id="facultyModalContent"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Training Instructors Section -->
+<section id="instructor" class="training-instructors">
+    <div class="container">
+        <div class="section-title">
+            <h2>Training Instructors</h2>
+            <p>Meet the experts guiding our hands-on training sessions and workshops</p>
+        </div>
+        <div class="instructors-grid" id="instructorsGrid">
+            <!-- First 3 instructors will be shown initially -->
+            <!-- The rest will be hidden and loaded via JS -->
+        </div>
+        <div class="instructors-loadmore" id="instructorsLoadMore">
+            <button id="loadMoreBtn" class="load-more-btn">Load More Instructors ↓</button>
+        </div>
+    </div>
+</section>
+
+<!-- Modal Popup (same as before) -->
+<div id="instructorModal" class="instructor-modal">
+    <div class="instructor-modal-content">
+        <span class="instructor-modal-close">&times;</span>
+        <div class="instructor-modal-body">
+            <div class="instructor-modal-image">
+                <img id="modalImg" src="" alt="">
+            </div>
+            <div class="instructor-modal-details">
+                <h3 id="modalName"></h3>
+                <p class="modal-title" id="modalTitle"></p>
+                <p class="modal-affiliation" id="modalAffiliation"></p>
+                <div class="modal-bio" id="modalBio"></div>
+                <div class="modal-social">
+                    <a href="#" id="modalTwitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" id="modalLinkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" id="modalEmail"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>
-    </section>
-
-    -->
-
-    <!-- Impact -->
-    <section class="impact-section" id="impact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Impact</h2>
-                <p>Measurable outcomes demonstrating our contribution to computational neuroscience in Africa</p>
-            </div>
-            
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number" data-count="100">0</div>
-                    <p class="stat-label">Researchers Trained</p>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number" data-count="9">0</div>
-                    <p class="stat-label">African Countries</p>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number" data-count="3">0</div>
-                    <p class="stat-label">Research Publications</p>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-number" data-count="3">0</div>
-                    <p class="stat-label">Collaborative Projects</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Grants -->
-    <section class="grants-section" id="grants">
-        <div class="container">
-            <div class="section-title">
-                <h2>Grant Funding & Partnerships</h2>
-                <p>Strategic investments in Africa's computational neuroscience future</p>
-            </div>
-            
-            <div class="grants-content">
-                <h3>Why Support ACNEI?</h3>
-                <p>Your support helps expand access to training, mentorship, and learning resources—so more African students and early-career researchers can participate in computational neuroscience.</p>
-                
-                <ul class="grants-list">
-                    <li><i class="fas fa-check"></i> <strong>Build skills:</strong> Support training pathways from early exposure to research-ready learning</li>
-                    <li><i class="fas fa-check"></i> <strong>Enable collaboration:</strong> Connect researchers and institutions for joint projects and shared resources</li>
-                    <li><i class="fas fa-check"></i> <strong>Reduce barriers:</strong> Grow open-source tools and beginner-friendly learning materials</li>
-                    <li><i class="fas fa-check"></i> <strong>Strengthen inclusion:</strong> Promote diversity, equity, and access across regions and backgrounds</li>
-                    <li><i class="fas fa-check"></i> <strong>Support sustainable growth:</strong> Help build long-term capacity through mentorship and community</li>
-                </ul>
-                
-                <button class="cta-button grants-btn" id="openContactModal2">Discuss Funding Opportunities</button>
-            </div>
-        </div>
-    </section>
+    </div>
+</div>
 
     <!-- Success Stories -->
-    <section class="stories-section" id="stories">
-        <div class="container">
-            <div class="section-title">
-                <h2>Community Stories</h2>
-                <p>Stories and testimonials will be added here as our programs grow.</p>
+<section class="stories-section" id="stories">
+    <div class="container">
+        <div class="section-title">
+            <h2>Community Stories</h2>
+            <p>Stories and testimonials will be added here as our programs grow.</p>
+        </div>
+        
+        <div class="stories-carousel">
+            <div class="story-card active">
+                <div class="story-logo">Story (Coming Soon)</div>
+                <div class="story-quote">
+                    “We’ll share student journeys and partner feedback here—highlighting learning, growth, and collaboration across Africa.”
+                </div>
+                <div class="story-author">ACNEI Team</div>
+                <div class="story-role">Updates will appear on launch</div>
             </div>
             
-            <div class="stories-carousel">
-                <div class="story-card active">
-                    <div class="story-logo">Story (Coming Soon)</div>
-                    <div class="story-quote">
-                        “We’ll share student journeys and partner feedback here—highlighting learning, growth, and collaboration across Africa.”
-                    </div>
-                    <div class="story-author">ACNEI Team</div>
-                    <div class="story-role">Updates will appear on launch</div>
+            <div class="story-card">
+                <div class="story-logo">Testimonial (Coming Soon)</div>
+                <div class="story-quote">
+                    “This space will feature verified testimonials from students, educators, and partners.”
                 </div>
-                
-                <div class="story-card">
-                    <div class="story-logo">Testimonial (Coming Soon)</div>
-                    <div class="story-quote">
-                        “This space will feature verified testimonials from students, educators, and partners.”
-                    </div>
-                    <div class="story-author">ACNEI</div>
-                    <div class="story-role">We publish only confirmed quotes</div>
-                </div>
-                
-                <div class="story-card">
-                    <div class="story-logo">Impact Highlight (Coming Soon)</div>
-                    <div class="story-quote">
-                        “We’ll share measurable outcomes here once they are verified and ready to publish.”
-                    </div>
-                    <div class="story-author">ACNEI</div>
-                    <div class="story-role">Verified updates only</div>
-                </div>
-                
-                <div class="carousel-controls">
-                    <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-                    <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                
-                <div class="carousel-dots">
-                    <span class="dot active" data-index="0"></span>
-                    <span class="dot" data-index="1"></span>
-                    <span class="dot" data-index="2"></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resources -->
-    <section class="resources-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Grant Resources</h2>
-                <p>Download our detailed proposals, impact reports, and partnership materials</p>
+                <div class="story-author">ACNEI</div>
+                <div class="story-role">We publish only confirmed quotes</div>
             </div>
             
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <div class="resource-icon">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                    </div>
-                    <h3>Grant Proposal</h3>
-                    <p>3-year strategic plan with budget, timeline, and expected outcomes</p>
-                    <a href="#" class="resource-btn">
-                        <i class="fas fa-download"></i> Download PDF
-                    </a>
+            <div class="story-card">
+                <div class="story-logo">Impact Highlight (Coming Soon)</div>
+                <div class="story-quote">
+                    “We’ll share measurable outcomes here once they are verified and ready to publish.”
                 </div>
-                
-                <div class="resource-card">
-                    <div class="resource-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Impact Report 2023</h3>
-                    <p>Detailed metrics and ROI analysis from previous funding cycles</p>
-                    <a href="#" class="resource-btn">
-                        <i class="fas fa-download"></i> Download PDF
-                    </a>
-                </div>
-                
-                <div class="resource-card">
-                    <div class="resource-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Partnership Framework</h3>
-                    <p>Customizable partnership models and collaboration guidelines</p>
-                    <a href="#" class="resource-btn">
-                        <i class="fas fa-download"></i> Download PDF
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partners -->
-    <section class="partners-section" id="partners">
-        <div class="container">
-            <div class="section-title">
-                <h2>Partners & Collaborators</h2>
-                <p>We work with organizations that support open, inclusive science and learning across Africa.</p>
-            </div>
-
-            <div class="partners-grid partners-cards">
-                <div class="partner-card">
-                    <img src="./images/trend-camina.png" alt="TReND in Africa logo" loading="lazy">
-                    <div class="partner-name">TReND in Africa</div>
-                </div>
-                <div class="partner-card">
-                    <img src="./images/neuromatch-logo.png" alt="Neuromatch logo" loading="lazy">
-                    <div class="partner-name">Neuromatch</div>
-                </div>
-                <div class="partner-card">
-                    <img src="./images/yosigo.png" alt="Math in the Wild logo" loading="lazy">
-                    <div class="partner-name">Math in the Wild</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter-section">
-        <div class="container">
-            <div class="newsletter-card">
-                <h3>Stay Updated</h3>
-                <p>Subscribe to receive our latest research, funding opportunities, and impact reports</p>
-                
-                <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" class="newsletter-input" placeholder="Your email address" required>
-                    <button type="submit" class="newsletter-btn">Subscribe</button>
-                </form>
-                
-                <p class="privacy-note"><i class="fas fa-shield-alt"></i> We respect your privacy</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Africa Computational Neuroscience Education Initiative</h3>
-                    <p>Building the future of brain research in Africa through computation, collaboration, and innovation.</p>
-                    <button class="cta-button footer-btn" id="openContactModal3">Contact Us</button>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li><a href="#programs"><i class="fas fa-chevron-right"></i> Programs</a></li>
-                        <li><a href="#team"><i class="fas fa-chevron-right"></i> Team</a></li>
-                        <li><a href="#grants"><i class="fas fa-chevron-right"></i> Grants</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria | Nairobi, Kenya</li>
-                        <li><i class="fas fa-envelope"></i> contact@acnei.org</li>
-                        <li><i class="fas fa-phone"></i> +234 807 828 2257</li>
-                        <li><i class="fas fa-globe"></i> www.acnei.org</li>
-                    </ul>
-                    
-                    <div class="social-links">
-                        <a href="https://x.com/ACNEI2026"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://www.linkedin.com/company/african-computational-neuroscience-education-initiative-acnei-melvien/"><i class="fa-brands fa-linkedin"></i></a>
-                    </div>
-                </div>
+                <div class="story-author">ACNEI</div>
+                <div class="story-role">Verified updates only</div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2026 Africa Computational Neuroscience Education Initiative. All rights reserved.</p>
-                <p>Registered Non-Profit Organization | Tax-Exempt Status</p>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
             </div>
         </div>
-    </footer>
+    </div>
+</section>
+
+<!-- Partners -->
+<section class="partners-section" id="partners">
+    <div class="container">
+        <div class="section-title">
+            <h2>Partners & Collaborators</h2>
+            <p>We work with organizations that support open, inclusive science and learning across Africa. You want to partner or collaborate with ACNEI? Reach out to <strong>management@acnei.org</p></strong>
+        </div>
+
+        <div class="partners-grid partners-cards">
+            <a href="https://trendinafrica.org/trend-camina/">
+                <div class="partner-card">
+                <img src="./images/trend-camina.png" alt="TReND in Africa logo" loading="lazy">
+                <div class="partner-name">TReND CaMinA</div>
+                </div>
+            </a>
+            <a href="https://neuromatch.io/">
+                <div class="partner-card">
+                <img src="./images/neuromatch-logo.png" alt="Neuromatch logo" loading="lazy">
+                <div class="partner-name">Neuromatch</div>
+                </div>
+            </a>
+            <a href="https://yosigo.ugr.es/en/about-yosigopublicando/">
+                <div class="partner-card">
+                <img src="./images/yosigo.png" alt="YoSigo logo" loading="lazy">
+                <div class="partner-name">YoSigo</div>
+                </div>
+            </a>
+            <a href="https://john-s-butler-dit.github.io/Maths-in-the-Wild/">
+                <div class="partner-card">
+                <img src="./images/math-in-the-wild.png" alt="Math in THE WILD logo" loading="lazy">
+                <div class="partner-name">Maths in THE WILD</div>
+                </div>
+            </a>
+            <a href="https://www.biologists.com/">
+                <div class="partner-card">
+                <img src="./images/math-in-the-wild.png" alt="The Company of Biologists logo" loading="lazy">
+                <div class="partner-name">The Company of Biologists</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-card">
+            <h3>Stay Updated</h3>
+            <p>Subscribe to receive our latest research, funding opportunities, and impact reports</p>
+            
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+            
+            <p class="privacy-note"><i class="fas fa-shield-alt"></i> We respect your privacy</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Africa Computational Neuroscience Educational Initiative</h3>
+                <p>Building the future of brain research in Africa through computation, collaboration, and innovation.</p>
+                <button class="cta-button footer-btn" id="openContactModal3">Contact Us</button>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+                    <li><a href="#programs"><i class="fas fa-chevron-right"></i> Programs</a></li>
+                    <li><a href="#team"><i class="fas fa-chevron-right"></i> Team</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <!--<li><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria | Nairobi, Kenya</li>-->
+                    <li><i class="fas fa-envelope"></i> contact@acnei.org</li>
+                    <li><i class="fas fa-phone"></i> +234 807 828 2257</li>
+                    <li><i class="fas fa-globe"></i> www.acnei.org</li>
+                </ul>
+                
+                <div class="social-links">
+                    <a href="https://x.com/ACNEI2026"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/african-computational-neuroscience-education-initiative-acnei-melvien/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Africa Computational Neuroscience Educational Initiative. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
     <!-- Back to Top -->
     <button class="back-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </button>
     
-    <script src="index.js"></script>
+    <script type="module" src="index4.js"></script>
 </body>
 </html>
