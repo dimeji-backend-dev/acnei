@@ -378,6 +378,19 @@ document.addEventListener('DOMContentLoaded', () => {
     initProgramModal();
 });
 
+
+
+// Contact Form 
+function initContactForm() {
+    console.log('Initializing contact form...');
+    const form = document.getElementById('contactForm');
+    if (!form) {
+        console.error('Contact form not found!');
+        return;
+    }
+
+}
+
 // Counter Animations - FIXED
 function initCounters() {
     console.log('Initializing counters...');
@@ -1020,7 +1033,6 @@ form.addEventListener('submit', async (e) => {
 
     const formData = new FormData(form);
     // access_key is already in the form as a hidden field, but we can also add it again (harmless)
-    formData.append("access_key", "ac66bf60-e4d9-45a6-8bb4-548d8a500a71");
 
     const originalText = submitBtn.textContent;
     submitBtn.textContent = "Sending...";
