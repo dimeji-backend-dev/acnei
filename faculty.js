@@ -76,7 +76,7 @@ const facultyData = [
         "Faculty Member, BioRTC Computational Neuroscience School"
     ],
     social: { linkedin: "#", twitter: "#", website: "#" },
-    image: "./images/faculty/ibeachu.jpg"
+    image: "./images/faculty/ibeachu.png"
     },
     {
         id: 6,
