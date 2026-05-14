@@ -378,105 +378,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initProgramModal();
 });
 
-
-
-// Contact Form 
-function initContactForm() {
-    console.log('Initializing contact form...');
-    const form = document.getElementById('contactForm');
-    if (!form) {
-        console.error('Contact form not found!');
-        return;
-    }
-    
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        console.log('Form submitted');
-        
-        // Basic validation
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
-        
-        if (!name || name.length < 2) {
-            alert('Please enter your full name (minimum 2 characters)');
-            return;
-        }
-        
-        if (!validateEmail(email)) {
-            alert('Please enter a valid email address');
-            return;
-        }
-        
-        if (!message || message.length < 10) {
-            alert('Please enter a message (minimum 10 characters)');
-            return;
-        }
-        
-        // Try to open Gmail app via deep-link on mobile, then Gmail web, then mailto fallback
-        const recipient = 'contact@acnei.org';
-        const subjectField = document.getElementById('subject');
-        const orgField = document.getElementById('organization');
-        const phoneField = document.getElementById('phone');
-        const subject = (subjectField && subjectField.value.trim()) ? `Website Inquiry: ${subjectField.value.trim()}` : 'Website Inquiry';
-        const bodyLines = [
-            `Name: ${name}`,
-            `Email: ${email}`,
-            `Organization: ${orgField ? orgField.value.trim() : ''}`,
-            `Phone: ${phoneField ? phoneField.value.trim() : ''}`,
-            '',
-            'Message:',
-            message
-        ];
-        const body = bodyLines.join('\n');
-
-        const gmailWeb = 'https://mail.google.com/mail/?view=cm&fs=1' +
-            `&to=${encodeURIComponent(recipient)}` +
-            `&su=${encodeURIComponent(subject)}` +
-            `&body=${encodeURIComponent(body)}`;
-
-        const mailto = `mailto:${encodeURIComponent(recipient)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-        const ua = navigator.userAgent || navigator.vendor || window.opera;
-        const isAndroid = /android/i.test(ua);
-        const isIos = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
-
-        // Gmail app deep-link (works on many Android/iOS setups where Gmail app is installed)
-        const gmailAppLink = `googlegmail://co?to=${encodeURIComponent(recipient)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-        try {
-            if (isAndroid || isIos) {
-                // Attempt to open Gmail app first. If it fails (no app), fallback after timeout to Gmail web then mailto.
-                window.location.href = gmailAppLink;
-
-                setTimeout(() => {
-                    // Open Gmail web in a new tab; if blocked, redirect to mailto
-                    const newWin = window.open(gmailWeb, '_blank');
-                    if (!newWin) {
-                        window.location.href = mailto;
-                    }
-                }, 800);
-            } else {
-                // Desktop: open Gmail web compose in a new tab; if popup blocked, use mailto
-                const newWin = window.open(gmailWeb, '_blank');
-                if (!newWin) window.location.href = mailto;
-            }
-        } catch (err) {
-            // Fallback to mailto if anything goes wrong
-            window.location.href = mailto;
-        }
-
-        // Close modal and reset form for a clean state
-        const modal = document.getElementById('contactModal');
-        if (modal && modal.classList.contains('active')) {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        form.reset();
-        console.log('Triggered compose flow and reset form');
-    });
-}
-
 // Counter Animations - FIXED
 function initCounters() {
     console.log('Initializing counters...');
@@ -1085,3 +986,73 @@ if (loadMoreBtn) {
 
 // Initial render (show only first 3)
 renderInstructors(false);
+
+const form = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const feedbackDiv = document.getElementById('successMessage');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Basic validation
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    if (!name || name.length < 2) {
+        alert('Please enter your full name (minimum 2 characters)');
+        return;
+    }
+    
+    if (!validateEmail(email)) {
+        alert('Please enter a valid email address');
+        return;
+    }
+    
+    if (!message || message.length < 10) {
+        alert('Please enter a message (minimum 10 characters)');
+        return;
+    }
+
+    // Clear previous feedback
+    feedbackDiv.style.display = 'none';
+    feedbackDiv.innerHTML = '';
+
+    const formData = new FormData(form);
+    // access_key is already in the form as a hidden field, but we can also add it again (harmless)
+    formData.append("access_key", "ac66bf60-e4d9-45a6-8bb4-548d8a500a71");
+
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
+    try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            // Show success message
+            feedbackDiv.textContent = "✅ Success! Your message has been delivered.";
+            feedbackDiv.className = "feedback success";
+            feedbackDiv.style.display = "block";
+            form.reset();  // clear the form fields
+        } else {
+            // Show error from Web3Forms
+            feedbackDiv.textContent = `❌ Error: ${data.message || "Something went wrong."}`;
+            feedbackDiv.className = "feedback error";
+            feedbackDiv.style.display = "block";
+        }
+    } catch (error) {
+        // Network or other unexpected error
+        feedbackDiv.textContent = "❌ Something went wrong. Please check your internet connection and try again.";
+        feedbackDiv.className = "feedback error";
+        feedbackDiv.style.display = "block";
+    } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
+});
