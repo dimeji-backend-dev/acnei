@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page not found - Return to Africa Computational Neuroscience Educational Initiative (ACNEI)">
+    <meta name="keywords" content="404, error, not found, acnei">
+    <title>404 - Page Not Found | ACNEI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="./images/acnei-logo.svg" alt="ACNEI logo" class="logo-img">
+                    <div class="logo-text">ACN<span>EI</span></div>
+                </a>
+                
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                
+                <div class="nav-container" id="navContainer">
+                    <ul class="nav-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#programs">Programs</a></li>
+                        <li><a href="index.html#team">Team</a></li>
+                        <li><a href="index.html#faculty">Faculty</a></li>
+                        <li><a href="index.html#instructor">Instructors</a></li>
+                        <li><a href="index.html#stories">Success</a></li>
+                        <li><a href="index.html#partners">Partners</a></li>
+                    </ul>
+                    <button class="cta-button nav-cta" id="openContactModal">Contact Us</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="contact-modal">
+            <div class="modal-header">
+                <h3>Contact Us</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="organization">Organization</label>
+                            <input type="text" id="organization" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" class="form-control" rows="5" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interest">Primary Interest</label>
+                        <select id="interest" class="form-control">
+                            <option value="">Select an option</option>
+                            <option value="grant">Grant Funding/Partnership</option>
+                            <option value="research">Research Collaboration</option>
+                            <option value="training">Training Program</option>
+                            <option value="volunteer">Volunteer Opportunity</option>
+                            <option value="other">Other Inquiry</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                    <div class="send-hint"><i class="fas fa-info-circle"></i> Opens Gmail compose window in a new tab (or your mail client)</div>
+                    
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Your message has been sent successfully! We'll get back to you soon.</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 404 Hero Section -->
+    <section class="error-404-section" id="error-404">
+        <div class="container">
+            <div class="error-404-content">
+                <div class="error-404-animation">
+                    <div class="error-code">404</div>
+                    <div class="error-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                </div>
+                
+                <h1>Page Not Found</h1>
+                <p class="error-description">
+                    We couldn't find the page you're looking for. It might have been moved, deleted, or you may have mistyped the URL.
+                </p>
+                
+                <div class="error-404-actions">
+                    <a href="index.html" class="cta-button">
+                        <i class="fas fa-home"></i> Back to Home
+                    </a>
+                    <a href="index.html#about" class="cta-button secondary-btn">
+                        <i class="fas fa-info-circle"></i> Learn About Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Navigation Section -->
+    <section class="error-404-nav-section">
+        <div class="container">
+            <h2>Explore ACNEI</h2>
+            <p>Here are some key sections you might be interested in:</p>
+            
+            <div class="error-404-grid">
+                <div class="error-404-nav-card">
+                    <div class="nav-card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Programs</h3>
+                    <p>Discover our computational neuroscience training and educational programs across Africa.</p>
+                    <a href="index.html#programs" class="nav-card-link">Explore Programs <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="error-404-nav-card">
+                    <div class="nav-card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Our Team</h3>
+                    <p>Meet the passionate professionals driving computational neuroscience education in Africa.</p>
+                    <a href="index.html#team" class="nav-card-link">View Team <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="error-404-nav-card">
+                    <div class="nav-card-icon">
+                        <i class="fas fa-chalkboard-user"></i>
+                    </div>
+                    <h3>Faculty & Instructors</h3>
+                    <p>Learn from leading experts and instructors dedicated to neuroscience education.</p>
+                    <a href="index.html#faculty" class="nav-card-link">View Faculty <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="error-404-nav-card">
+                    <div class="nav-card-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partners</h3>
+                    <p>See the organizations collaborating with us to advance neuroscience education.</p>
+                    <a href="index.html#partners" class="nav-card-link">View Partners <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="error-404-nav-card">
+                    <div class="nav-card-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Success Stories</h3>
+                    <p>Be inspired by the achievements of our trainees and program participants.</p>
+                    <a href="index.html#stories" class="nav-card-link">Read Stories <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="error-404-nav-card">
+                    <div class="nav-card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Get in Touch</h3>
+                    <p>Have questions? Reach out to us and let's connect about our initiatives.</p>
+                    <button class="nav-card-link contact-btn" id="openContactModal2">Contact Us <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="error-404-about-section">
+        <div class="container">
+            <div class="error-404-about-content">
+                <div class="about-text">
+                    <h2>About ACNEI</h2>
+                    <p>
+                        The Africa Computational Neuroscience Educational Initiative (ACNEI) is dedicated to expanding computational neuroscience education and early exposure across Africa through innovative training, mentorship, and collaboration.
+                    </p>
+                    <p>
+                        Our mission is to build a vibrant community of computational neuroscience researchers and educators across the African continent, fostering cutting-edge research and education in brain science.
+                    </p>
+                    <a href="index.html#about" class="cta-button">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="about-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Helpful Tips Section -->
+    <section class="error-404-tips-section">
+        <div class="container">
+            <h2>What You Can Do</h2>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <h4>Check the URL</h4>
+                    <p>Make sure the address is spelled correctly. URLs are case-sensitive.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <h4>Use Navigation</h4>
+                    <p>Navigate using the menu at the top of the page to find what you're looking for.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <h4>Contact Support</h4>
+                    <p>If you believe this is an error, please reach out to us using the contact form.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Africa Computational Neuroscience Educational Initiative</h3>
+                    <p>Building the future of brain research in Africa through computation, collaboration, and innovation.</p>
+                    <button class="cta-button footer-btn" id="openContactModal3">Contact Us</button>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="index.html#programs"><i class="fas fa-chevron-right"></i> Programs</a></li>
+                        <li><a href="index.html#team"><i class="fas fa-chevron-right"></i> Team</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> contact@acnei.org</li>
+                        <li><i class="fas fa-phone"></i> +234 807 828 2257</li>
+                        <li><i class="fas fa-globe"></i> www.acnei.org</li>
+                    </ul>
+                    
+                    <div class="social-links">
+                        <a href="https://x.com/ACNEI2026"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/african-computational-neuroscience-education-initiative-acnei-melvien/"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Africa Computational Neuroscience Educational Initiative. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script type="module" src="index4.js"></script>
+</body>
+</html>
