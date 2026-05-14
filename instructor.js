@@ -58,6 +58,36 @@ const instructorsData = [
         twitter: "#",
         linkedin: "#",
         email: "anna.freund@acnei.org"
+    },
+    {
+        name: "Bayu Gautama Wundari",
+        title: "Researcher",
+        affiliation: "National Institute of Information and Communications Technology (NICT), Japan",
+        bio: "I am a researcher at the National Institute of Information and Communications Technology (NICT), Japan. My research lies in the intersection between the human brain and artificial intelligence, with a focus on human stereopsis and its computational modeling. I investigate how depth information is encoded in the brain with deep neural network models. As a training instructor, I aim to provide an integrative perspective on computational neuroscience, linking theory, fMRI data, and modern AI approaches.",
+        image: "images/instructors/bayu.jpg",
+        twitter: "#",
+        linkedin: "#",
+        email: "bayu.wundari@acnei.org"
+    },
+    {
+        name: "Mercy Nathaniel",
+        title: "Doctoral Student",
+        affiliation: "Ahmadu Bello University, Nigeria",
+        bio: "Mercy Nathaniel is a doctoral student at Ahmadu Bello University, where her research focuses on the quantitative analysis of brain structure and its relationship to function. She has a background in neuroanatomy, with prior work on the cytoarchitecture of the motor cortex in the African giant rat. Her work aims to understand how cellular organization within neural circuits, particularly neuron–glia interactions, contributes to learning and memory, bridging neuroanatomy with computational approaches. Beyond her research, she is committed to capacity building in neuroscience education and actively engages in community outreach, including initiatives in climate education and sustainability.",
+        image: "images/instructors/mercy.png",
+        twitter: "#",
+        linkedin: "#",
+        email: "mercy.nathaniel@acnei.org"
+    },
+    {
+        name: "Tolulope Oladele",
+        title: "Assistant Lecturer",
+        affiliation: "Department of Anatomy, Faculty of Basic Medical Sciences, University of Medical Sciences, Nigeria",
+        bio: "Tolulope Oladele is an Assistant Lecturer in the Department of Anatomy at the Faculty of Basic Medical Sciences, University of Medical Sciences. He specializes in research at the intersection of Systems and Computational Neuroscience, focusing on the neural mechanisms underlying memory, learning, and decision-making. His research bridges the gap between experimental studies and computational models. By synthesizing research insights across multiple levels, such as molecular, cellular, behavioral, structural, and computational, his work aims to link brain structure with complex behaviors and activity. He serves as a Neuromatch Ambassador, promoting accessibility and inclusivity in computational science for a global community. Moreover, he has published his research in several leading academic journals. In addition to his research, Tolulope is an active educator who teaches foundational and theoretical concepts in computational neuroscience through workshops and courses, including Neuromatch Academy. Outside of his research, he has interests and skills in User Interface & Experience Design and Graphic Design.",
+        image: "images/instructors/tolulope.png",
+        twitter: "#",
+        linkedin: "#",
+        email: "tolulope.oladele@acnei.org"
     }
 ];
 
