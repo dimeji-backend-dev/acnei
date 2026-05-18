@@ -679,76 +679,46 @@ stay tuned for the next opening date, and get ready to join us soon.
     </div>
 </footer>
 
-<!-- COOKIE CONSENT BANNER (fixed bottom bar) -->
-<div class="cookie-banner" id="cookieBanner">
-    <div class="container">
-        <div class="cookie-text">
-            <p>We use cookies to enhance your experience, analyze site traffic, and personalize content. 
-               By clicking "Accept All", you consent to our use of cookies. 
-               <a href="#" id="openCookieSettingsLink">Manage preferences</a>
+<!-- Cookie Consent (lightweight) -->
+<div id="cookieConsent" class="cookie-consent" style="display: none;">
+    <div class="cookie-inner">
+        <div class="cookie-message">
+            <p>🍪 We use cookies to improve your experience. 
+               <button id="cookieSettingsToggle" class="cookie-settings-link">Manage cookies</button>
             </p>
         </div>
-        <div class="cookie-buttons">
-            <button class="cookie-btn cookie-btn-secondary" id="declineCookiesBtn">Decline</button>
-            <button class="cookie-btn cookie-btn-primary" id="acceptCookiesBtn">Accept All</button>
-            <button class="cookie-btn cookie-btn-outline" id="customizeCookiesBtn">Customize</button>
+        <div class="cookie-actions">
+            <button id="cookieAcceptAll" class="cookie-btn cookie-primary">Accept all</button>
+            <button id="cookieDecline" class="cookie-btn cookie-secondary">Decline</button>
         </div>
     </div>
-</div>
-
-<!-- COOKIE SETTINGS MODAL -->
-<div class="cookie-modal-overlay" id="cookieModalOverlay">
-    <div class="cookie-modal">
-        <div class="cookie-modal-header">
-            <h3>Cookie Preferences</h3>
-            <button class="close-cookie-modal" id="closeCookieModalBtn">&times;</button>
+    <div id="cookieSettingsPanel" class="cookie-settings-panel" style="display: none;">
+        <div class="cookie-option">
+            <label>Strictly necessary (always active)</label>
+            <span class="cookie-badge">Required</span>
         </div>
-        <div class="cookie-modal-body">
-            <div class="cookie-category">
-                <div class="cookie-category-header">
-                    <span class="cookie-category-title">Strictly Necessary Cookies</span>
-                    <label class="cookie-toggle disabled">
-                        <input type="checkbox" id="necessaryCookies" checked disabled>
-                        <span class="slider"></span>
-                    </label>
-                </div>
-                <div class="cookie-category-desc">These cookies are essential for the website to function properly. They cannot be disabled.</div>
-            </div>
-            <div class="cookie-category">
-                <div class="cookie-category-header">
-                    <span class="cookie-category-title">Functional & Performance</span>
-                    <label class="cookie-toggle">
-                        <input type="checkbox" id="functionalCookies">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-                <div class="cookie-category-desc">Enhance website performance and remember your preferences (e.g., language, region).</div>
-            </div>
-            <div class="cookie-category">
-                <div class="cookie-category-header">
-                    <span class="cookie-category-title">Analytics & Tracking</span>
-                    <label class="cookie-toggle">
-                        <input type="checkbox" id="analyticsCookies">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-                <div class="cookie-category-desc">Help us understand how visitors interact with our site, so we can improve content and user experience.</div>
-            </div>
-            <div class="cookie-category">
-                <div class="cookie-category-header">
-                    <span class="cookie-category-title">Marketing & Social Media</span>
-                    <label class="cookie-toggle">
-                        <input type="checkbox" id="marketingCookies">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-                <div class="cookie-category-desc">Used to deliver relevant ads and integrate social media features.</div>
-            </div>
+        <div class="cookie-option">
+            <label>Functional & performance</label>
+            <label class="cookie-switch">
+                <input type="checkbox" id="optFunctional">
+                <span class="slider-round"></span>
+            </label>
         </div>
-        <div class="cookie-modal-footer">
-            <button class="cookie-btn cookie-btn-secondary" id="declineAllModalBtn">Decline All</button>
-            <button class="cookie-save-btn" id="saveCookiePreferences">Save My Preferences</button>
+        <div class="cookie-option">
+            <label>Analytics</label>
+            <label class="cookie-switch">
+                <input type="checkbox" id="optAnalytics">
+                <span class="slider-round"></span>
+            </label>
         </div>
+        <div class="cookie-option">
+            <label>Marketing</label>
+            <label class="cookie-switch">
+                <input type="checkbox" id="optMarketing">
+                <span class="slider-round"></span>
+            </label>
+        </div>
+        <button id="cookieSavePrefs" class="cookie-btn cookie-primary save-prefs">Save preferences</button>
     </div>
 </div>
 
