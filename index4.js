@@ -1068,3 +1068,164 @@ form.addEventListener('submit', async (e) => {
         submitBtn.disabled = false;
     }
 });
+
+// ========== COOKIE CONSENT MANAGER ==========
+(function() {
+    // DOM elements
+    const banner = document.getElementById('cookieBanner');
+    const acceptBtn = document.getElementById('acceptCookiesBtn');
+    const declineBtn = document.getElementById('declineCookiesBtn');
+    const customizeBtn = document.getElementById('customizeCookiesBtn');
+    const modalOverlay = document.getElementById('cookieModalOverlay');
+    const closeModalBtn = document.getElementById('closeCookieModalBtn');
+    const savePrefsBtn = document.getElementById('saveCookiePreferences');
+    const declineAllModalBtn = document.getElementById('declineAllModalBtn');
+    const openSettingsLink = document.getElementById('openCookieSettingsLink');
+    
+    // Checkboxes
+    const necessaryCheck = document.getElementById('necessaryCookies');
+    const functionalCheck = document.getElementById('functionalCookies');
+    const analyticsCheck = document.getElementById('analyticsCookies');
+    const marketingCheck = document.getElementById('marketingCookies');
+    
+    // Cookie name for storing preferences
+    const COOKIE_PREF_KEY = 'acnei_cookie_consent';
+    
+    // Helper: Read cookie value
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+    }
+    
+    // Helper: Set cookie with expiry (1 year)
+    function setCookie(name, value, days = 365) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/; SameSite=Lax`;
+    }
+    
+    // Get current preferences from localStorage (fallback to cookie)
+    function getPreferences() {
+        const stored = localStorage.getItem(COOKIE_PREF_KEY);
+        if (stored) {
+            try {
+                return JSON.parse(stored);
+            } catch(e) { return null; }
+        }
+        // Legacy cookie support
+        const cookiePref = getCookie(COOKIE_PREF_KEY);
+        if (cookiePref) {
+            try {
+                return JSON.parse(decodeURIComponent(cookiePref));
+            } catch(e) { return null; }
+        }
+        return null;
+    }
+    
+    // Save preferences to localStorage and cookie, then apply actions (e.g., load analytics)
+    function savePreferences(prefs, hideBanner = true) {
+        localStorage.setItem(COOKIE_PREF_KEY, JSON.stringify(prefs));
+        setCookie(COOKIE_PREF_KEY, encodeURIComponent(JSON.stringify(prefs)), 365);
+        
+        // Here you would actually enable/disable external scripts (GA, FB Pixel, etc.)
+        // Example: if (prefs.analytics) { loadGoogleAnalytics(); }
+        console.log('Cookie preferences saved:', prefs);
+        
+        // Hide banner and close modal
+        if (hideBanner && banner) banner.classList.remove('show');
+        if (modalOverlay) modalOverlay.classList.remove('active');
+        
+        // Dispatch event so other scripts can react
+        window.dispatchEvent(new CustomEvent('cookiePreferencesUpdated', { detail: prefs }));
+    }
+    
+    // Load preferences into the modal UI
+    function loadPreferencesIntoUI() {
+        const prefs = getPreferences();
+        if (prefs) {
+            if (functionalCheck) functionalCheck.checked = prefs.functional === true;
+            if (analyticsCheck) analyticsCheck.checked = prefs.analytics === true;
+            if (marketingCheck) marketingCheck.checked = prefs.marketing === true;
+        } else {
+            // Default: only necessary cookies (all optional off)
+            if (functionalCheck) functionalCheck.checked = false;
+            if (analyticsCheck) analyticsCheck.checked = false;
+            if (marketingCheck) marketingCheck.checked = false;
+        }
+    }
+    
+    // Accept all cookies (enable all optional categories)
+    function acceptAll() {
+        const prefs = {
+            necessary: true,
+            functional: true,
+            analytics: true,
+            marketing: true
+        };
+        savePreferences(prefs);
+    }
+    
+    // Decline all non-essential
+    function declineAll() {
+        const prefs = {
+            necessary: true,
+            functional: false,
+            analytics: false,
+            marketing: false
+        };
+        savePreferences(prefs);
+    }
+    
+    // Save from modal UI
+    function saveFromModal() {
+        const prefs = {
+            necessary: true, // always required
+            functional: functionalCheck ? functionalCheck.checked : false,
+            analytics: analyticsCheck ? analyticsCheck.checked : false,
+            marketing: marketingCheck ? marketingCheck.checked : false
+        };
+        savePreferences(prefs);
+    }
+    
+    // Show banner only if no consent given yet
+    function initCookieBanner() {
+        const existingPrefs = getPreferences();
+        if (existingPrefs !== null) {
+            // Already decided, no need to show banner
+            if (banner) banner.classList.remove('show');
+            return;
+        }
+        // Show banner
+        if (banner) banner.classList.add('show');
+    }
+    
+    // Modal controls
+    function openModal() {
+        loadPreferencesIntoUI();
+        if (modalOverlay) modalOverlay.classList.add('active');
+    }
+    function closeModal() {
+        if (modalOverlay) modalOverlay.classList.remove('active');
+    }
+    
+    // Event listeners
+    if (acceptBtn) acceptBtn.addEventListener('click', acceptAll);
+    if (declineBtn) declineBtn.addEventListener('click', declineAll);
+    if (customizeBtn) customizeBtn.addEventListener('click', openModal);
+    if (openSettingsLink) openSettingsLink.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    if (savePrefsBtn) savePrefsBtn.addEventListener('click', saveFromModal);
+    if (declineAllModalBtn) declineAllModalBtn.addEventListener('click', () => { declineAll(); closeModal(); });
+    
+    // Close modal when clicking outside overlay
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) closeModal();
+        });
+    }
+    
+    // Initialize
+    initCookieBanner();
+})();
