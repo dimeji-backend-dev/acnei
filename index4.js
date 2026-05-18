@@ -1048,7 +1048,7 @@ form.addEventListener('submit', async (e) => {
 
         if (response.ok) {
             // Show success message
-            feedbackDiv.textContent = "✅ Success! Your message has been delivered, and our team will reach out to you soon. Thabk you!";
+            feedbackDiv.textContent = "✅ Success! Your message has been delivered, and our team will reach out to you soon. Thank you!";
             feedbackDiv.className = "feedback success";
             feedbackDiv.style.display = "block";
             form.reset();  // clear the form fields
