@@ -98,7 +98,7 @@ const instructorsData = [
         twitter: "#",
         linkedin: "#",
         email: "abdulwaliy.oyekunle@acnei.org"
-}
+    }
 ];
 
 export default instructorsData;
