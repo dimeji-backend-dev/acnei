@@ -88,7 +88,17 @@ const instructorsData = [
         twitter: "#",
         linkedin: "#",
         email: "tolulope.oladele@acnei.org"
-    }
+    },
+    {
+        name: "Abdulwaliy Oyekunle",
+        title: "Erasmus Mundus Scholar",
+        affiliation: "Bar-Ilan University, Israel & University of Jyväskylä, Finland",
+        bio: "Abdulwaliy Oyekunle is a MasterCard Foundation Scholar and an Erasmus Mundus scholar pursuing an MSc in Brain and Data Science at Bar-Ilan University, Israel, and the University of Jyväskylä, Finland. He holds two bachelor's degrees: Electronic and Electrical Engineering and Psychology, building a strong interdisciplinary foundation across cognitive science and technology. His work lies at the intersection of AI and Psychology, Computational Neuroscience, and the development of neurotechnology and intelligent systems. He is the co-founder of NeuroAspire, an initiative that expands neuroscience training for high school students across Africa. His work at NeuroAspire was featured in the Jean-François de Clermont-Tonnerre Foundation. He also contributed to the first open-source African EEG schizophrenia dataset, advancing accessible neuroimaging research and data-driven mental health studies. Featured news: https://fondationjfmlct.org/no-black-boxes",
+        image: "images/instructors/abdulwaliy.jpeg",
+        twitter: "#",
+        linkedin: "#",
+        email: "abdulwaliy.oyekunle@acnei.org"
+}
 ];
 
 export default instructorsData;
