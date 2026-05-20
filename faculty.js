@@ -171,7 +171,7 @@ const facultyData = [
     },
     {
         id: 12,
-        name: "Chris Andrew",
+        name: "Chris Ki",
         role: "PhD Candidate",
         institution: "Carnegie Mellon University",
         expertise: ["Population-Level Neural Analyses", "Brain-Computer Interfaces", "Volitional Regulation", "Internal States", "Arousal", "Motivation", "Neural Computation"],
