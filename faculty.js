@@ -175,7 +175,7 @@ const facultyData = [
         role: "PhD Candidate",
         institution: "Carnegie Mellon University",
         expertise: ["Population-Level Neural Analyses", "Brain-Computer Interfaces", "Volitional Regulation", "Internal States", "Arousal", "Motivation", "Neural Computation"],
-        bio: "Chris Andrew is a sixth-year PhD student in the Joint Neural Computation and Machine Learning program at Carnegie Mellon University, co-advised by Matthew Smith and Byron Yu. His research leverages population-level neural analyses to develop brain–computer interfaces that enable volitional regulation of internal states such as arousal and motivation.",
+        bio: "Chris Ki is a sixth-year PhD student in the Joint Neural Computation and Machine Learning program at Carnegie Mellon University, co-advised by Matthew Smith and Byron Yu. His research leverages population-level neural analyses to develop brain–computer interfaces that enable volitional regulation of internal states such as arousal and motivation.",
         publications: [],
         achievements: [],
         social: { linkedin: "#", twitter: "#", website: "#" },
