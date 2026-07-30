@@ -196,65 +196,47 @@ function initProgramModal() {
 
     const programData = {
         neurocomp: {
-            title: 'ACNEI Computational Neuroscience Introductory School.',
-            image: "./images/call-for-application.jpg",
-            text: "",
-            extraHtml: `
-                <div>
-                <h3 class="modal-subtitle">CALL FOR APPLICATIONS</h3>
-                <strong>African Computational Neuroscience Educational Initiative (ACNEI) <br> 10-Day Introductory Online Training</strong>
-                <p><strong>Theme:</strong> Foundations of Computational Neuroscience for Young African Scholars</p>
-                </div>
-                
-                <p>The African Computational Neuroscience Educational Initiative (ACNEI) is pleased to announce a <strong>10-day introductory online training program</strong> designed to inspire and equip post-high school and undergraduate students across Africa with foundational skills in neuroscience, computation, and data-driven thinking. Computational neuroscience sits at the intersection of brain science, artificial intelligence, data science, and medicine. Yet, access to training in this field remains limited across much of Africa. This program is designed to democratize access, build early confidence, and prepare students for deeper engagement in neuroscience and AIrelated careers.</p>
-
-		<h4 class="modal-subtitle">Program Overview.</h4>
-                <ul>
-	                <li><strong>Dates:</strong> 11th - 22nd May, 2026; Training at specific regional hubs (optional): 25-28th May, 2026</li>
-			<li><strong>Format:</strong> Fully Online</li>
-			<li><strong>Duration:</strong> Two-week (2 hours per day)</li>
-			<li><strong>Target Group:</strong> Post-high school students & early undergraduates across Africa</li>
-			<li><strong>Cost:</strong> Free (selection-based)</li>
-                </ul>
-                
-                <h4 class="modal-subtitle">What You Will Learn.</h4>
-                <strong>Participant will</strong>
-                <ul>
-	                <li>Understand how the brain works and why computation matters</li>
-			<li>Learn beginner-friendly Python programming for neuroscience</li>
-			<li>Explore neurons and neural networks as computational systems</li>
-			<li>Build hands-on mini-projects (no prior coding required)</li>
-			<li>Engage with African-centered neuroscience and AI examples</li>
-			<li>Receive mentorship and career guidance from global experts</li>
-                </ul>
-                
-                <h4 class="modal-subtitle">Who Should Apply?</h4>
-                <strong>We strongly encourage applications from:</strong>
-                <ul>
-	                <li>African post-high school students, gap-year students, and undergraduates</li>
-			<li>African students with interests in biology, medicine, engineering, computer science, psychology, AI, neuroscience or data science</li>
-			<li>Applicants with little or no prior coding experience</li>
-			<li>Students from underrepresented regions and backgrounds</li>
-                </ul>
-                
-                <h4 class="modal-subtitle">Benefits.</h4>
-                <ul>
-	                <li>Certificate of completion</li>
-			<li>Access to ACNEI mentorship and alumni network</li>
-			<li>Priority consideration for advanced ACNEI programs & regional hubs</li>
-			<li>Exposure to global open-science and neuroscience communities</li>
-                </ul>
-                
-                <h4 class="modal-subtitle">Application Details.</h4>
-                <ul>
-	                <li>Application Deadline: March 29th, 2026</li>
-			<li>Pogram Start: 11th May 2026</li>
-			<li><a href="https://forms.gle/91suvgbUq1QrJXCm8" target="_blank">Apply here</a></li>
-                </ul>
-                <p class="modal-note">For inquiries: Email <strong>contact@acnei.org</strong>.</p>
-            `
-        },
-        network: {
+				    title: 'ACNEI Mathematical Foundations for Brain Data Workshop',
+				    image: "./images/maths.jpg",
+				    text: "",
+				    extraHtml: `
+				        <div>
+				            <h3 class="modal-subtitle">ACNEI Workshop on Mathematical Foundations for Brain Data</h3>
+				            <strong>Math for Brain Data: Mathematical Foundation to Neuro-systems</strong>
+				            <p><strong>Theme:</strong> Mathematical Foundation to Neuro-systems</p>
+				        </div>
+				
+				        <p>The African Computational Neuroscience Educational Initiative (ACNEI) is pleased to announce a four day virtual workshop titled "Math for Brain Data: Mathematical Foundation to Neuro-systems", scheduled to hold from 23 to 26 September.</p>
+				
+				        <p>This workshop is designed for students, early career researchers, and anyone interested in computational neuroscience, mathematics, artificial intelligence, data science, and brain research. Participants will build the mathematical foundation needed to understand and analyze brain data while gaining insight into the principles that support modern computational neuroscience.</p>
+				
+				        <p>Throughout the workshop, participants will explore essential mathematical concepts that form the backbone of neuro-systems analysis. The sessions will combine theory with practical applications, making the content accessible to beginners while providing valuable insights for learners with quantitative backgrounds.</p>
+				
+				        <h4 class="modal-subtitle">What You Will Learn</h4>
+				        <ul>
+				            <li>Mathematical thinking for neuroscience</li>
+				            <li>Foundations of brain data analysis</li>
+				            <li>Quantitative approaches to neuro-systems</li>
+				            <li>Computational methods used in modern neuroscience</li>
+				            <li>Practical applications of mathematics in brain research</li>
+				        </ul>
+				
+				        <p>At ACNEI, our mission is to expand computational neuroscience education and create opportunities for young African scholars to participate in world class research and innovation. This workshop continues our commitment to making high quality computational neuroscience education accessible across Africa.</p>
+				
+				        <h4 class="modal-subtitle">Event Details</h4>
+				        <ul>
+				            <li><strong>Date:</strong> 23 to 26 September</li>
+				            <li><strong>Theme:</strong> Math for Brain Data: Mathematical Foundation to Neuro-systems</li>
+				            <li><strong>Format:</strong> Virtual</li>
+				            <li><strong>Organizer:</strong> African Computational Neuroscience Educational Initiative (ACNEI)</li>
+				        </ul>
+				
+				        <h4 class="modal-subtitle">Call to Action</h4>
+				        <p>Registration details and additional information will be announced soon. We encourage students, researchers, educators, and professionals across Africa and beyond to stay connected with ACNEI and prepare to join this exciting learning experience.</p>
+				        <p>For updates and future announcements, visit ACNEI's official website.</p>
+				    `
+				},
+		network: {
             title: 'Pan-African Research Network',
             image: "./images/neuroscience-network-1.jpg",
             text: "We connect researchers, institutions, and resources across Africa to support collaboration, shared learning, and joint research in computational neuroscience.",
