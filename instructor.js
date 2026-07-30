@@ -1,9 +1,9 @@
 const instructorsData = [
     {
         name: "Peter Adepoju",
-        title: "Early-Career Researcher in Theoretical and Computational Neuroscience",
-        affiliation: "Independent Researcher (AIMS & Olusegun Agagu University)",
-        bio: "Peter Adepoju is an early-career researcher with a background in mathematics and growing expertise in theoretical and computational neuroscience. He completed an M.Sc. in Mathematical Sciences at the University of Cape Town through the African Institute for Mathematical Sciences (AIMS), graduating with distinction in his dissertation, in which he developed a multi-fidelity neural posterior estimation pipeline for efficient parameter inference in stochastic Hodgkin–Huxley models. Prior to this, he obtained a B.Tech. in Mathematics from Olusegun Agagu University of Science and Technology, Nigeria, where he graduated as the best student in the Department of Mathematical Sciences and co-authored five peer-reviewed publications in complex analysis. His research focuses on using mathematics, statistical inference, dynamical systems, and machine learning to study neural dynamics, with a particular interest in understanding how memory contributes to learning and decision-making. He has worked on projects spanning simulation-based inference for stochastic single-neuron models, functional connectivity analysis in fMRI, neural population dynamics, and dynamical systems models of short-term memory. More broadly, his work aims to use mathematically grounded and data-driven approaches to uncover mechanistic principles of brain function.",
+        title: "Mathematician and NeuroAI Researcher",
+        affiliation: "Simons Computational Neuroscience Imbizo Alumnus & African Brain Data Network Fellow",
+        bio: "Peter Adepoju is a mathematician and NeuroAI researcher interested in understanding how memory supports learning and decision-making. His work focuses on developing interpretable mathematical and computational models of neural mechanisms and using insights from biological intelligence to inform the design of more robust and adaptive artificial intelligence systems. He is an alumnus of the Simons Computational Neuroscience Imbizo and currently an African Brain Data Network Fellow, where he is developing expertise in MRI and fMRI research. Beyond research, Peter is passionate about teaching mathematics and making mathematical and computational concepts more accessible to learners.",
         image: "images/instructors/peter.png",
         twitter: "#",
         linkedin: "#",
