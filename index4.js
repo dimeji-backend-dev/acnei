@@ -197,7 +197,7 @@ function initProgramModal() {
     const programData = {
         neurocomp: {
 				    title: 'ACNEI Mathematical Foundations for Brain Data Workshop',
-				    image: "./images/maths.jpg",
+				    image: "./images/maths.jpeg",
 				    text: "",
 				    extraHtml: `
 				        <div>
